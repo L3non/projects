@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Starbucks Coffee</title>
+   <link rel="stylesheet" href="./styles/style.css">
+</head>
+<body>
+   <section>
+      <!-- Circle -->
+      <div class="circle"></div>
+      <!-- End Circle -->
+
+      <!-- Header -->
+      <header>
+         <a href="#"><img src="assets/logo.png" alt="Starbucks logo" class="logo"></a>
+         <div class="toggle" onclick="toggleMenu();"></div>
+            <ul class="navegation">
+               <li><a href="#">Home</a></li>
+               <li><a href="#">Menu</a></li>
+               <li><a href="#">What's New</a></li>
+               <li><a href="#">Contact us</a></li>
+            </ul>
+      </header>
+      <!-- End Header -->
+
+      <!-- Content -->
+      <div class="content">
+         <div class="textbox">
+            <h1>It's not just Coffee <br>It's <span>Starbucks</span></h1>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi explicabo praesentium totam temporibus cumque odio voluptate non, omnis exercitationem laborum iste, ex voluptatem quam sunt similique</p>
+            <a href="#">Learn More</a>
+         </div>
+         <div class="imgbox">
+            <img src="assets/img1.png" alt="Starbucks coffee" class="starbucks">
+         </div>
+      </div>
+      <!-- End Content -->
+
+      <!-- Thumb -->
+      <ul class="thumb">
+         <li><img src="assets/thumb1.png" alt="coffee" onclick="imgSlider('assets/img1.png');changeCircleColor('#017143')"></li>
+         <li><img src="assets/thumb2.png" alt="coffee" onclick="imgSlider('assets/img2.png');changeCircleColor('#eb7495')"></li>
+         <li><img src="assets/thumb3.png" alt="coffee" onclick="imgSlider('assets/img3.png');changeCircleColor('#d752b1')"></li>
+      </ul>
+      <ul class="sci">
+         <li><a href="#"><img src="assets/facebook.png" alt="facebook icon"></a></li>
+         <li><a href="#"><img src="assets/twitter.png" alt="facebook icon"></a></li>
+         <li><a href="#"><img src="assets/instagram.png" alt="facebook icon"></a></li>
+      </ul>
+      <!-- End Thumb-->
+   </section>
+
+   <!-- Scripts -->
+   <script src="scripts.js"></script>
+   <!-- End Scripts-->
+</body>
+</html>

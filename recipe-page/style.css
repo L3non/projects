@@ -1,0 +1,28 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Outfit';
+    src: url('assets/fonts/outfit/Outfit-VariableFont_wght.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Young';
+    src: url(assets/fonts/young-serif/YoungSerif-Regular.ttf) format(truetype);
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --white: #fff;
+    --roseWhite: #fff5fa;
+    --eggshell: #f3e6d8;
+    --lightGrey: #e4ded8;
+    --wengeBrown: #5f574e;
+    --darkCharcoal: hsl(24, 5%, 18%);
+}
