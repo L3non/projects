@@ -31,9 +31,7 @@
     --darkRaspberry: #7b284f;
 }
 
-body{
-    background-color: var(--eggshell);
-}
+body{background-color: var(--eggshell);}
 
 main {
     box-shadow: 1px 1px 5px #5f574e18;
@@ -78,9 +76,7 @@ li > span {
     font-weight: bold;
 }
 
-li::marker {
-    font-size: 12px;
-}
+li::marker {font-size: 12px;}
 
     /* Header */
 
@@ -109,15 +105,11 @@ header > h1 {
     padding: 0 0 15px 17px;
 }
 
-#pt li::marker {
-    color: var(--darkRaspberry);
-}
+#pt li::marker {color: var(--darkRaspberry);}
 
     /* Ingredients */
 
-#ing li::marker {
-    color: var(--nutmeg);
-}
+#ing li::marker {color: var(--nutmeg);}
 
     /* Instructions */
 
@@ -128,9 +120,7 @@ header > h1 {
 
     /* Nutrition */
 
-#nu {
-    border-bottom: none;
-}
+#nu {border-bottom: none;}
 
 #nu table {
     border-collapse: collapse;
@@ -139,13 +129,8 @@ header > h1 {
     width: 100%;
 }
 
-#nu table tr {
-    border-bottom: 1px solid #5f574e42;
-}
-
-#nu table td {
-    padding: 10px 30px;
-}
+#nu table tr {border-bottom: 1px solid #5f574e42;}
+#nu table td {padding: 10px 30px;}
 
 #nu table td:nth-child(2n) {
     color: var(--nutmeg);
