@@ -1,3 +1,5 @@
+    /* Global */
+
 * {
     padding: 0;
     margin: 0;
@@ -22,7 +24,130 @@
     --white: #fff;
     --roseWhite: #fff5fa;
     --eggshell: #f3e6d8;
-    --lightGrey: #e4ded8;
+    --lightPink: #fd1a840e;
     --wengeBrown: #5f574e;
-    --darkCharcoal: hsl(24, 5%, 18%);
+    --darkCharcoal: #302d2c;
+    --nutmeg: #854632;
+    --darkRaspberry: #7b284f;
+}
+
+body{
+    background-color: var(--eggshell);
+}
+
+main {
+    box-shadow: 1px 1px 5px #5f574e18;
+    border-radius: 25px;
+    background-color: var(--roseWhite);
+    width: 650px;
+    height: 100%;
+    margin: 80px auto;
+    padding: 20px;
+}
+
+section {
+    border-bottom: 1px solid #5f574e42;
+    padding: 20px 0;
+}
+
+h1 {
+    font-family: 'Young';
+    padding-bottom: 20px;
+}
+
+.st {
+    color: var(--nutmeg);
+    font: 25px 'Young';
+}
+
+p {
+    color: var(--wengeBrown);
+    font: 16px 'Outfit';
+    padding-bottom: 20px;
+}
+
+li {
+    color: var(--wengeBrown);
+    padding: 0 0 15px 10px;
+    font: 16px 'Outfit';
+    margin-left:35px;
+}
+
+li > span {
+    color: var(--darkCharcoal);
+    font-weight: bold;
+}
+
+li::marker {
+    font-size: 12px;
+}
+
+    /* Header */
+
+header > img {
+    border-radius: 10px;
+    width: 100%;
+}
+
+header > h1 {
+    color: var(--darkCharcoal);
+    font-size: 30px;
+}
+
+    /* Preparation Time */
+
+#pt {
+    border-radius: 10px;
+    border-bottom: none;
+    background-color: var(--lightPink);
+    padding-bottom: 20px;
+}
+
+#pt > h1 {
+    color: var(--darkRaspberry);
+    font: bold 20px 'Outfit';
+    padding: 0 0 15px 17px;
+}
+
+#pt li::marker {
+    color: var(--darkRaspberry);
+}
+
+    /* Ingredients */
+
+#ing li::marker {
+    color: var(--nutmeg);
+}
+
+    /* Instructions */
+
+#ins li::marker {
+    color: var(--nutmeg);
+    font: bold 16px 'Outfit';
+}
+
+    /* Nutrition */
+
+#nu {
+    border-bottom: none;
+}
+
+#nu table {
+    border-collapse: collapse;
+    color: var(--wengeBrown);
+    font: 16px 'Outfit';
+    width: 100%;
+}
+
+#nu table tr {
+    border-bottom: 1px solid #5f574e42;
+}
+
+#nu table td {
+    padding: 10px 30px;
+}
+
+#nu table td:nth-child(2n) {
+    color: var(--nutmeg);
+    font-weight: bold;
 }
