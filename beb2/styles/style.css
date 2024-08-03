@@ -1,0 +1,73 @@
+    /* == == == == FONTS == == == == */
+
+@import url('https://fonts.googleapis.com/css2?family=Ephesis&family=Noto+Serif:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+    /* == == == == VARIABLES == == == == */
+
+:root {
+    /* Color Palette */
+    --c-primary-l:  #FFFF33;
+    --c-primary:    #FCFC05;
+    --c-primary-d:  #CCCC00;
+    --c-secondary-l:#4D2EE5;
+    --c-secondary:  #2404C2;
+    --c-secondary-d:#1A0099;
+    --c-tertiary-l: #21A63C;
+    --c-tertiary:   #06771D;
+    --c-tertiary-d: #005912;
+    --c-dark-l:     #2B2929;
+    --c-dark:       #121212;
+    --c-dark-d:     #0D0B0B;
+    --c-grey-l:     #4F4B4B;
+    --c-grey:       #353535;
+    --c-grey-d:     #0F0E0E;
+    --c-light-l:    #FFFFFF;
+    --c-light:      #F2F2F2;
+    --c-light-d:    #E6E6E6;
+
+    /* Font Family */
+    --ff-display: "Ephesis", cursive;
+    --ff-serif: "Noto Serif", serif;
+    --ff-s-serif: "Poppins", sans-serif;
+
+    /* Font Size */
+    --fs-big: 42px;
+    --fs-h1: 34px;
+    --fs-h2: 30px;
+    --fs-h3: 26px;
+    --fs-h4: 22px;
+    --fs-h5: 18px;
+    --fs-par: 16px;
+    --fs-small: 14px;
+    --fs-smaller: 12px;
+}
+
+    /* == == == == GLOBAL == == == == */
+
+* {
+    color: var(--c-dark);
+    font-family: var(--ff-s-serif);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+    /* == == == == SPLASH SCREEN == == == == */
+
+#intro {
+    background-color: var(--c-primary);
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 1;
+    transition: 1s;
+}
+
+#logo_header {
+    top: 40%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
