@@ -61,13 +61,44 @@
     top: 0;
     left: 0;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     z-index: 1;
     transition: 1s;
 }
 
 #logo_header {
-    top: 40%;
-    left: 50%;
+    top: 30%;
     position: absolute;
-    transform: translate(-50%, -50%);
+}
+
+.logo {
+    opacity: 0;
+    font-family: var(--ff-display);
+    font-size: var(--fs-big);
+    bottom: -20px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.logo.active {
+    opacity: 1;
+    bottom: 0;
+    transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+    opacity: 0;
+    bottom: 150px;
+    transition: ease-in-out 0.5s;
+}
+
+.logo img {margin-right: 20px;}
+
+#slogan {
+    font-family: var(--ff-serif);
+    margin-top: 10px;
+    font-size: var(--fs-h5);
 }
