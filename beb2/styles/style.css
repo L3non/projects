@@ -49,7 +49,16 @@
     font-family: var(--ff-s-serif);
     margin: 0;
     padding: 0;
+    font-size: var(--fs-par);
     box-sizing: border-box;
+}
+
+ul {list-style: none;}
+a {text-decoration: none;}
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
 }
 
     /* == == == == SPLASH SCREEN == == == == */
@@ -64,7 +73,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 1;
+    z-index: 999;
     transition: 1s;
 }
 
@@ -95,10 +104,26 @@
     transition: ease-in-out 0.5s;
 }
 
-.logo img {margin-right: 20px;}
+.logo img {
+    margin-right: 20px;
+    width: 70px;
+    height: 70px;
+}
 
 #slogan {
     font-family: var(--ff-serif);
     margin-top: 10px;
     font-size: var(--fs-h5);
+}
+
+    /* == == == == HEADER == == == == */
+
+header {
+    box-shadow: 0 2px 8px #0a18331a;
+    background-color: var(--c-light-l);
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
 }
