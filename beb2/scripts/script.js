@@ -1,4 +1,4 @@
-    /* == == SPLASH SCREEN == == */
+    /* == == == == SPLASH SCREEN == == == == */
 
 let intro = document.querySelector('#intro');
 let logo = document.querySelector('#logo_header');
@@ -31,7 +31,7 @@ addEventListener('DOMContentLoaded', ()=>{
     });
 });
 
-    /* == == HEADER == == */
+    /* == == == == HEADER == == == == */
 
 // Show Menu
 const showMenu = (toggleId, navId) =>{
@@ -44,8 +44,7 @@ const showMenu = (toggleId, navId) =>{
         // Add show-icon to show and hide menu icon
         toggle.classList.toggle('show_icon');
     });
- }
- 
+}
 showMenu('nav_toggle','nav_menu');
 
 // Show Dropdown Menu
@@ -85,7 +84,7 @@ const toggleItem = (item) => {
         dropdownContainer.style.height = dropdownContainer.scrollHeight + 'px';
         item.classList.add('show_drop');
      }
- }
+}
 
 // Delete dropdown styles
 const mediaQuery = matchMedia('(min-width: 1118px)'), dropdownContainer = document.querySelectorAll('.drop_container');
@@ -104,6 +103,58 @@ const removeStyle = () => {
             e.classList.remove('show_drop');
         });
     }
- }
- 
- addEventListener('resize', removeStyle);
+}
+addEventListener('resize', removeStyle);
+
+    /* == == == == MAIN == == == == */
+
+// 1. Get DOM
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
+
+let carouselDom = document.querySelector('.carousel');
+let SliderDom = carouselDom.querySelector('.carousel .list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+let timeDom = document.querySelector('.carousel .time');
+
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+let timeRunning = 3000;
+let timeAutoNext = 7000;
+
+nextDom.onclick = function() {
+    showSlider('next');    
+}
+
+prevDom.onclick = function() {
+    showSlider('prev');    
+}
+
+let runTimeOut;
+let runNextAuto = setTimeout(() => {
+    next.click();
+}, timeAutoNext);
+function showSlider(type){
+    let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+    
+    if(type === 'next') {
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add('next');
+    } else {
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add('prev');
+    }
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+    }, timeRunning);
+
+    clearTimeout(runNextAuto);
+    runNextAuto = setTimeout(() => {
+        next.click();
+    }, timeAutoNext);
+}
