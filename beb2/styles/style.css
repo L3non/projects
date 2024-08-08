@@ -18,7 +18,7 @@
     --c-dark-l:     #2B2929;
     --c-dark:       #121212;
     --c-dark-d:     #0D0B0B;
-    --c-grey-l:     #4F4B4B;
+    --c-grey-l:     #cccccc;
     --c-grey:       #353535;
     --c-grey-d:     #0F0E0E;
     --c-light-l:    #FFFFFF;
@@ -77,7 +77,7 @@ a {text-decoration: none;}
     transition: 1s;
 }
 
-#logo_header {
+#logo_splash {
     top: 30%;
     position: absolute;
 }
@@ -119,8 +119,8 @@ a {text-decoration: none;}
     /* == == == == HEADER == == == == */
 
 header {
-    box-shadow: 0 2px 8px #0a18331a;
-    background-color: var(--bg-white);
+    box-shadow: 0 2px 8px var(--c-dark-l);
+    background-color: var(--c-dark);
     width: 100%;
     position: fixed;
     top: 0;
@@ -138,12 +138,8 @@ nav { height: 70px;}
 }
 
 #nav_logo {
-    color: var(--txt-blue);
-    font-weight: var(--wgt-sem);
-    column-gap: 0.25rem;
     display: inline-flex;
     align-items: center;
-    transition: color .3s;
 }
 
 #nav_logo img {
@@ -152,15 +148,15 @@ nav { height: 70px;}
 }
 
 #nav_toggle {
-    width: 32px;
-    height: 32px;
+    width: 25px;
+    height: 25px;
     position: relative;
 }
 
 .nav_toggle_menu, .nav_toggle_close {
     cursor: pointer;
-    color: var(--txt-blue);
-    font-size: 1.25rem;
+    color: var(--c-primary);
+    font-size: var(--fs-h4);
     position: absolute;
     display: grid;
     place-items: center;
@@ -175,36 +171,38 @@ nav { height: 70px;}
         opacity: 0;
         overflow: auto;
         pointer-events: none;
-        background-color: var(--bg-white);
+        background-color: var(--c-dark);
         width: 100%;
-        height: calc(100vh - 3.5rem);
-        padding-block: 1.5rem 4rem;
+        height: calc(100vh - 70px);
+        padding-block: 26px 22px;
         position: absolute;
         left: 0;
-        top: 2.5rem;
+        top: 70px;
         transition: top .4s, opacity .3s;
     }
 
-    .nav_menu::-webkit-scrollbar {width: 0.5rem;}
-    .nav_menu::-webkit-scrollbar-thumb {background-color: #a9afbc;}
+    .nav_menu::-webkit-scrollbar {width: 6px;}
+    .nav_menu::-webkit-scrollbar-thumb {background-color: #afafaf;}
 }
 
 .nav_link {
-    color: var(--txt-blue);
-    font-weight: var(--wgt-sem);
-    padding: 1.25rem 1.5rem;
+    color: var(--c-light);
+    font-weight: 600;
+    padding: 26px 22px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    transition: background-color .3s;
+    transition: color .3s;
 }
 
-.nav_link:hover {background-color: var(--first-color-l);}
+.nav_link:hover {
+    color: var(--c-primary);
+}
 
 .show_menu {
     pointer-events: initial;
     opacity: 1;
-    top: 3.5rem;
+    top: 70px;
 }
 
 .show_icon .nav_toggle_menu {
@@ -220,8 +218,9 @@ nav { height: 70px;}
 .drop_btn {cursor: pointer;}
 
 .drop_arrow {
+    color: var(--c-primary);
     font-weight: initial;
-    font-size: 1.5rem;
+    font-size: var(--fs-h4);
     transition: transform .4s;
 }
 
@@ -229,54 +228,48 @@ nav { height: 70px;}
 
 .drop_container {
     overflow: hidden;
-    background-color: var(--first-color-l);
+    background-color: var(--c-grey-l);
     height: 0;
     transition: height .4s;
 }
 
-.drop_content {row-gap: 1.75rem;}
+.drop_content {row-gap: 26px;}
 
 .drop_group {
-    padding-left: 2.5rem;
-    row-gap: 0.5rem;
+    padding-left: 30px;
+    row-gap: 8px;
 }
 
-.drop_group:first-child {margin-top: 1.25rem;}
-
-.drop_icon i {
-    color: var(--first-color);
-    font-size: 1.25rem;
-}
+.drop_group:first-child {margin-top: 16px;}
 
 .drop_title {
-    color: var(--txt-blue);
-    font-weight: var(--wgt-sem);
-    font-size: var(--fs-2);
+    color: var(--c-dark);
+    font-weight: 600;
+    font-size: var(--fs-h5);
 }
 
-.drop_list {row-gap: 0.25rem;}
+.drop_list {row-gap: 3px;}
 
 .drop_link {
-    color: var(--txt-grey);
-    font-weight: var(--wgt-med);
-    font-size: var(--fs-3);
+    color: var(--c-grey);
+    font-size: var(--fs-par);
     transition: color .3s;
 }
 
-.drop_link:hover {color: var(--txt-blue);}
+.drop_link:hover {color: var(--c-primary);}
 .show_drop .drop_arrow {transform: rotate(180deg);}
 
     /* == == == == Breakpoints == == == == */
 
 /* Small devices */
 @media screen and (max-width: 300px) {
-    .drop_group {padding-left: 1.5rem;}
+    .drop_group {padding-left: 22px;}
 }
 
 /* Large devices */
 @media screen and (min-width: 1118px) {
     nav {
-        height: 5.5rem;
+        height: 90px;
         display: flex;
         justify-content: space-between;
     }
@@ -285,7 +278,7 @@ nav { height: 70px;}
 
     #nav_list {
         height: 100%;
-        column-gap: 3rem;
+        column-gap: 30px;
         display: flex;
     }
 
@@ -295,14 +288,14 @@ nav { height: 70px;}
 
     .drop_btn {
         pointer-events: none;
-        column-gap: 0.25rem;
+        column-gap: .25rem;
     }
 
     .drop_container {
         pointer-events: none;
         opacity: 0;
-        box-shadow: 0 6px 8px #0a18330d;
-        background-color: var(--bg-white);
+        box-shadow: 0 6px 8px var(--c-light-d);
+        background-color: var(--c-grey-l);
         height: max-content;
         position: absolute;
         left: 0;
@@ -315,32 +308,21 @@ nav { height: 70px;}
         max-width: 1120px;
         margin-inline: auto;
         grid-template-columns: repeat(4, max-content);
-        column-gap: 6rem;
+        display: flex;
+        justify-content: space-around;
     }
 
     .drop_group {
-        padding: 4rem 0;
+        padding: 26px 0;
         align-content: baseline;
-        row-gap: 1.25rem;
+        row-gap: 18px;
     }
 
     .drop_group:first-child, .drop_group:last-child {margin: 0;}
-    .drop_list {row-gap: 0.75rem;}
-
-    .drop_icon {
-        border-radius: 50%;
-        background-color: var(--first-color-l);
-        width: 60px;
-        height: 60px;
-        margin-bottom: 1rem;
-        display: grid;
-        place-items: center;
-    }
-
-    .drop_icon i {font-size: 2rem;}
-    .drop_title {font-size: var(--fs-1);}
-    .drop_link {font: var(--fs-2);}
-    .drop_link:hover {color: var(--first-color);}
+    .drop_list {row-gap: 12px;}
+    .drop_title {font-size: var(--fs-h5);}
+    .drop_link {font: var(--fs-par);}
+    .drop_link:hover {color: var(--c-primary);}
     .drop_item {cursor: pointer;}
     .drop_item:hover .drop_arrow {transform: rotate(180deg);}
 
@@ -348,7 +330,7 @@ nav { height: 70px;}
         pointer-events: initial;
         cursor: initial;
         opacity: 1;
-        top: 5.5rem;
+        top: 90px;
     }
 }
 @media screen and (min-width: 1152px) {
