@@ -106,6 +106,11 @@ const removeStyle = () => {
 }
 addEventListener('resize', removeStyle);
 
+addEventListener('scroll', function() {
+    var header = document.querySelector('header');
+    header.classList.toggle('sticky', window.scrollY > 500);
+})
+
     /* == == == == MAIN == == == == */
 
 // 1. Get DOM

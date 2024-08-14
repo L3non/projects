@@ -123,9 +123,11 @@ header {
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 100;
+    z-index: 101;
+    transition: .6s;
 }
 
+header.sticky {background-color: var(--c-dark);}
 nav { height: 70px;}
 
 #nav_data {
@@ -138,6 +140,7 @@ nav { height: 70px;}
 #nav_logo {
     display: inline-flex;
     align-items: center;
+    transition: .6s;
 }
 
 #nav_logo img {
@@ -264,17 +267,20 @@ nav { height: 70px;}
     overflow: hidden;
     position: relative;
 }
+
 .carousel .list .item{
     width: 100%;
     height: 100%;
     position: absolute;
     inset: 0 0 0 0;
 }
+
 .carousel .list .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
 }
+
 .carousel .list .item .content{
     position: absolute;
     top: 20%;
@@ -291,8 +297,9 @@ nav { height: 70px;}
     color: var(--c-light);
     font-size: var(--fs-h3);
     font-weight: bold;
-    line-height: var(--fs-h1);
+    line-height: var(--fs-big);
 }
+
 .carousel .list .item .topic{
     color: var(--c-primary);
     font-size: var(--fs-big);
@@ -303,7 +310,7 @@ nav { height: 70px;}
 .carousel .list .item .des{
     color: var(--c-light-d);
     font-size: var(--fs-h4);
-    line-height: var(--fs-h3);
+    line-height: var(--fs-h2);
 }
 
 .carousel .list .item .buttons{
@@ -313,6 +320,7 @@ nav { height: 70px;}
     gap: 16px;
     margin-top: 30px;
 }
+
 .carousel .list .item .buttons button{
     border-radius: 26px;
     border: none;
@@ -320,11 +328,13 @@ nav { height: 70px;}
     letter-spacing: 2px;
     font-weight: 600;
 }
+
 .carousel .list .item .buttons button:nth-child(2){
     background-color: transparent;
     border: 1px solid var(--c-primary);
     color: var(--c-light);
 }
+
 /* thumbail */
 .thumbnail{
     position: absolute;
@@ -335,24 +345,28 @@ nav { height: 70px;}
     display: flex;
     gap: 20px;
 }
+
 .thumbnail .item{
     width: 150px;
     height: 220px;
     flex-shrink: 0;
     position: relative;
 }
+
 .thumbnail .item img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 20px;
 }
+
 .thumbnail .item .content{
     position: absolute;
     bottom: 16px;
     left: 12px;
     right: 12px;
 }
+
 .thumbnail .item .content .title{
     color: var(--c-primary);
     text-shadow: 0 2px 4px var(--c-grey);
@@ -371,6 +385,7 @@ nav { height: 70px;}
     gap: 16px;
     align-items: center;
 }
+
 .arrows button{
     width: 50px;
     height: 50px;
@@ -383,6 +398,7 @@ nav { height: 70px;}
     font-weight: bold;
     transition: .5s;
 }
+
 .arrows button:hover{
     background-color: var(--c-primary);
     color: var(--c-dark-l);
@@ -396,13 +412,13 @@ nav { height: 70px;}
 .carousel .list .item:nth-child(1) .content .title,
 .carousel .list .item:nth-child(1) .content .topic,
 .carousel .list .item:nth-child(1) .content .des,
-.carousel .list .item:nth-child(1) .content .buttons
-{
+.carousel .list .item:nth-child(1) .content .buttons {
     transform: translateY(50px);
     filter: blur(20px);
     opacity: 0;
     animation: showContent .5s 1s linear 1 forwards;
 }
+
 @keyframes showContent{
     to{
         transform: translateY(0px);
@@ -410,15 +426,19 @@ nav { height: 70px;}
         opacity: 1;
     }
 }
+
 .carousel .list .item:nth-child(1) .content .title{
     animation-delay: 1.4s!important;
 }
+
 .carousel .list .item:nth-child(1) .content .topic{
     animation-delay: 1.6s!important;
 }
+
 .carousel .list .item:nth-child(1) .content .buttons{
     animation-delay: 2s!important;
 }
+
 /* create animation when next click */
 .carousel.next .list .item:nth-child(1) img{
     width: 150px;
@@ -429,6 +449,7 @@ nav { height: 70px;}
     border-radius: 30px;
     animation: showImage .5s linear 1 forwards;
 }
+
 @keyframes showImage{
     to{
         bottom: 0;
@@ -443,15 +464,18 @@ nav { height: 70px;}
     overflow: hidden;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
 .carousel.prev .list .item img{
     z-index: 100;
 }
+
 @keyframes showThumbnail{
     from{
         width: 0;
         opacity: 0;
     }
 }
+
 .carousel.next .thumbnail{
     animation: effectNext .5s linear 1 forwards;
 }
@@ -478,11 +502,11 @@ nav { height: 70px;}
 .carousel.prev .time{
     animation: runningTime 7s linear 1 forwards;
 }
+
 @keyframes runningTime{
     from{ width: 100%}
     to{width: 0}
 }
-
 
 /* prev click */
 
@@ -496,6 +520,7 @@ nav { height: 70px;}
     bottom: 0;
     left: 0;
 }
+
 @keyframes outFrame{
     to{
         width: 150px;
@@ -511,6 +536,7 @@ nav { height: 70px;}
     opacity: 0;
     animation: showThumbnail .5s linear 1 forwards;
 }
+
 .carousel.next .arrows button,
 .carousel.prev .arrows button{
     pointer-events: none;
@@ -518,8 +544,7 @@ nav { height: 70px;}
 .carousel.prev .list .item:nth-child(2) .content .title,
 .carousel.prev .list .item:nth-child(2) .content .topic,
 .carousel.prev .list .item:nth-child(2) .content .des,
-.carousel.prev .list .item:nth-child(2) .content .buttons
-{
+.carousel.prev .list .item:nth-child(2) .content .buttons{
     animation: contentOut 1.5s linear 1 forwards!important;
 }
 
