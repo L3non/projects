@@ -163,3 +163,7 @@ function showSlider(type){
         next.click();
     }, timeAutoNext);
 }
+
+    /* == == == == WHY CHOOSE US == == == == */
+
+    

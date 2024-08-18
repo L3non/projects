@@ -558,35 +558,7 @@ nav { height: 70px;}
 
     /* == == == == WHY CHOOSE US == == == == */
 
-.card_list .card_item {
-    color: var(--c-light);
-    width: 400px;
-    padding: 35px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    border-radius: 8px;
-    background-color: var(--c-grey-l);
-    border: 1px solid var(--c-light-d);
-    backdrop-filter: blur(30px);
-}
 
-.card_list .card_item .card_icon {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    margin-bottom: 40px;
-    border: 3px solid var(--c-light);
-    padding: 4px;
-}
-
-.card_list .card_item .card_title {
-    font-size: var(--fs-h5);
-    color: var(--c-light-d);
-    font-weight: 500;
-    margin: 14px 0 40px;
-}
 
     /* == == == == RESPONSIVENESS == == == == */
 
