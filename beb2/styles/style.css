@@ -561,15 +561,15 @@ nav { height: 70px;}
 
 .wcu_container {
     width: 100%;
-    height: 100vh;
-    padding: 0 8%;
+    height: 260px;
+    padding: 0 28px;
 }
 
 .wcu_container h1 {
     font-size: var(--fs-h1);
     text-align: center;
-    padding-top: 5%;
-    margin-bottom: 60px;
+    padding-top: 28px;
+    margin-bottom: 28px;
     font-weight: 600;
     position: relative;
 }
@@ -589,21 +589,20 @@ nav { height: 70px;}
 .row {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 30px;
 }
 
 .service {
     text-align: center;
-    padding: 25px 10px;
+    padding: 20px 10px;
     border-radius: 5px;
-    font-size: var(--fs-h5);
+    font-size: var(--fs-small);
     background: transparent;
     transition: transform .5s, background .5s;
 }
 
 .service i {
     font-size: var(--fs-big);
-    margin-bottom: 10px;
+    margin-bottom: 8px;
     color: var(--c-primary);
 }
 
@@ -705,7 +704,7 @@ nav { height: 70px;}
     .drop_container {
         pointer-events: none;
         opacity: 0;
-        box-shadow: 0 6px 8px var(--c-light-d);
+        box-shadow: 0 1px 12px #929292;
         background-color: var(--c-grey-l);
         height: max-content;
         position: absolute;
@@ -756,4 +755,10 @@ nav { height: 70px;}
         top: 15%;
         padding-right: 0;
     }
+}
+
+    /* == == == == WHY CHOOSE US == == == == */
+
+@media screen and (max-width: 678px) {
+    .wcu_container {height: 100%;}
 }
