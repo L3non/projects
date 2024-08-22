@@ -618,7 +618,7 @@ nav { height: 70px;}
 
 .service:hover i {color: var(--c-dark);}
 
-    /* == == == == All Our Products == == == == */
+    /* == == == == ALL OUR PRODUCTS == == == == */
 
 #products {
     width: 100vw;
@@ -659,14 +659,12 @@ nav { height: 70px;}
 }
 
 .p_item:nth-child(2n) h2 {text-align: end;}
-
-.p_text {
-    margin: 0 42px;
-}
+.p_text {margin: 0 42px;}
 
 .p_text h2, .p_text span {
     font-size: var(--fs-h2);
     font-family: var(--ff-serif);
+    margin-bottom: 14px;
 }
 
 .p_text h2 > span {
@@ -676,21 +674,26 @@ nav { height: 70px;}
 }
 
 .p_img {
+    box-shadow: 1px 1px 4px var(--c-primary);
     border-radius: 16px;
     width: 400px;
     height: 250px;
+    transition: transform .5s, background .5s;
+}
+
+.p_img:hover {
+    box-shadow: 2px 2px 6px var(--c-primary);
+    transform: scale(1.05);
 }
 
     /* == == == == RESPONSIVENESS == == == == */
 
     /* == == == == HEADER == == == == */
 
-/* Small devices */
 @media screen and (max-width: 300px) {
     .drop_group {padding-left: 22px;}
 }
 
-/* Large devices */
 @media screen and (min-width: 1118px) {
     nav {
         height: 90px;
@@ -775,4 +778,45 @@ nav { height: 70px;}
 
 @media screen and (max-width: 678px) {
     .wcu_container {height: 100%;}
+}
+
+    /* == == == == ALL OUR PRODUCTS == == == == */
+
+@media screen and (max-width: 750px) {
+    #products {padding: 0px;}
+
+    .p_item {
+        margin: 30px 0 0 0;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .p_item:nth-child(2n) {
+        flex-direction: column;
+        margin: 36px 0 0 0;
+    }
+
+    .p_item:nth-child(2n) h2 {text-align: center;}
+    .p_text {margin: 0 8px;}
+    
+    .p_text h2, .p_text span {
+        font-size: var(--fs-h4);
+        font-family: var(--ff-serif);
+        margin-bottom: 8px;
+    }
+    
+    .p_text h2 > span {
+        letter-spacing: 2px;
+        padding: 0 2px;
+        background: linear-gradient(to bottom, transparent 50%, var(--c-primary) 50%);
+    }
+
+    .p_text p {font-size: var(--fs-small);}
+    .p_item a {text-align: center;}
+    
+    .p_img {
+        margin-top: 28px;
+        width: 95%;
+        height: 200px;
+    }
 }
