@@ -126,6 +126,7 @@ header {
     left: 0;
     z-index: 101;
     transition: .6s;
+    letter-spacing: 1px;
 }
 
 header.sticky {background-color: var(--c-dark);}
@@ -306,12 +307,14 @@ nav { height: 70px;}
     font-size: var(--fs-big);
     font-weight: bold;
     line-height: var(--fs-big);
+    letter-spacing: 1px;
 }
 
 .carousel .list .item .des{
     color: var(--c-light-d);
     font-size: var(--fs-h4);
     line-height: var(--fs-h2);
+    letter-spacing: 1px;
 }
 
 .carousel .list .item .buttons{
@@ -577,6 +580,7 @@ nav { height: 70px;}
     margin-bottom: 28px;
     font-weight: 600;
     position: relative;
+    letter-spacing: 1px;
 }
 
 .wcu_container h1::after {
@@ -614,6 +618,13 @@ nav { height: 70px;}
 .service h2 {
     font-weight: 600;
     margin-bottom: 8px;
+    letter-spacing: 1px;
+}
+
+.service p {
+    font-size: var(--fs-p);
+    letter-spacing: 1px;
+    color: var(--c-grey);
 }
 
 .service:hover {
@@ -626,8 +637,8 @@ nav { height: 70px;}
     /* == == == == ALL OUR PRODUCTS == == == == */
 
 #products {
-    width: 100vw;
-    padding: 0 80px;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 #products h1 {
@@ -637,6 +648,7 @@ nav { height: 70px;}
     margin-bottom: 48px;
     font-weight: 600;
     position: relative;
+    letter-spacing: 1px;
 }
 
 #products h1::after {
@@ -670,6 +682,7 @@ nav { height: 70px;}
     font-size: var(--fs-h2);
     font-family: var(--ff-serif);
     margin-bottom: 14px;
+    letter-spacing: 1px;
 }
 
 .p_text h2 > span {
@@ -677,6 +690,8 @@ nav { height: 70px;}
     padding: 0 2px;
     background: linear-gradient(to bottom, transparent 50%, var(--c-primary) 50%);
 }
+
+.p_text p {letter-spacing: 1px;}
 
 .p_img {
     box-shadow: 1px 1px 4px var(--c-primary);
@@ -713,6 +728,7 @@ nav { height: 70px;}
     text-align: center;
     font-weight: 600;
     position: relative;
+    letter-spacing: 1px;
 }
 
 #testimonial h1::after {
@@ -737,8 +753,87 @@ nav { height: 70px;}
 
 #testimonial p {
     color: var(--c-light);
+    margin-top: 48px;
+    letter-spacing: 1.5px;
+}
+
+    /* == == == == CONTACTS == == == == */
+
+#contacts {
+    padding: 60px 0 60px 60px;
+    display: flex;
+    justify-content: end;
+    text-align: center;
+    height: 100%;
+}
+
+#c_text h1 {
+    padding-top: 48px;
+    color: var(--c-dark);
+    font-size: var(--fs-h1);
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+#c_text h1::after {
+    border-radius: 20px;
+    content: '';
+    background-color: var(--c-primary);
+    width: 140px;
+    height: 4px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#c_text p {
+    color: var(--c-dark-l);
     font-size: var(--fs-p);
     margin-top: 48px;
+    letter-spacing: 1px;
+}
+
+#c_info {
+    background-color: var(--c-dark);
+    padding: 48px 28px;
+    min-width: 35vw;
+    height: 100%;
+    margin-left: 28px;
+}
+
+#c_info h2 {
+    color: var(--c-light);
+    font-size: var(--fs-h4);
+    font-family: var(--ff-serif);
+    letter-spacing: 1px;
+    text-align: start;
+}
+
+#c_links {
+    margin-top: 28px;
+    text-align: start;
+}
+
+.c_item {
+    margin-top: 28px;
+    transition: .5s;
+}
+
+.c_item:hover {transform: scale(1.05);}
+.c_item:hover i {color: var(--c-light);}
+.c_item:hover a {color: var(--c-primary);}
+
+.c_item i {
+    color: var(--c-primary);
+    font-size: var(--fs-h1);
+    margin-right: 12px;
+}
+
+.c_item a {
+    color: var(--c-light);
+    font-size: var(--fs-h5);
     letter-spacing: 1.5px;
 }
 
@@ -746,7 +841,8 @@ nav { height: 70px;}
 
     /* == == == == HEADER == == == == */
 
-@media screen and (max-width: 300px) {
+@media screen and (max-width: 500px) {
+    header {background-color: var(--c-dark);}
     .drop_group {padding-left: 22px;}
 }
 
@@ -855,7 +951,7 @@ nav { height: 70px;}
     /* == == == == ALL OUR PRODUCTS == == == == */
 
 @media screen and (max-width: 750px) {
-    #products {padding: 0px;}
+    #products {width: 95vw;}
 
     .p_item {
         margin: 30px 0 0 0;
@@ -897,4 +993,28 @@ nav { height: 70px;}
 
 @media screen and (max-width: 750px) {
     #testimonial {padding: 48px 3%;}
+}
+
+    /* == == == == CONTACTS == == == == */
+
+@media screen and (max-width: 750px) {
+    #contacts {
+        padding: 0;
+        flex-direction: column;
+    }
+    
+    #c_text p {
+        padding: 0 3%;
+        color: var(--c-dark-l);
+        font-size: var(--fs-p);
+        margin: 48px 0 24px 0;
+        letter-spacing: 1px;
+    }
+    
+    #c_info {
+        padding: 48px 28px;
+        width: 100vw;
+        height: 100%;
+        margin-left: 0;
+    }
 }
