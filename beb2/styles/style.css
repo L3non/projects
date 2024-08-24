@@ -622,7 +622,7 @@ nav { height: 70px;}
 }
 
 .service p {
-    font-size: var(--fs-p);
+    font-size: var(--fs-par);
     letter-spacing: 1px;
     color: var(--c-grey);
 }
@@ -790,7 +790,7 @@ nav { height: 70px;}
 
 #c_text p {
     color: var(--c-dark-l);
-    font-size: var(--fs-p);
+    font-size: var(--fs-par);
     margin-top: 48px;
     letter-spacing: 1px;
 }
@@ -836,6 +836,88 @@ nav { height: 70px;}
     font-size: var(--fs-h5);
     letter-spacing: 1.5px;
 }
+
+    /* == == == == FOOTER == == == == */
+
+footer {
+    background-color: var(--c-dark);
+    padding: 70px 0;
+    line-height: 1.5;
+}
+
+.f_container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.f_row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.f_col {
+    width: 25%;
+    padding: 0 15px;
+}
+
+.f_col h4 {
+    font-size: var(--fs-h5);
+    color: var(--c-light);
+    text-transform: capitalize;
+    margin-bottom: 35px;
+    font-weight: 500;
+    position: relative;
+}
+
+.f_col h4::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    background-color: var(--c-primary);
+    height: 2px;
+    box-sizing: border-box;
+    width: 50px;
+}
+
+.f_col ul li:not(:last-child) {margin-bottom: 10px;}
+
+.f_col ul li a {
+    font-size: var(--fs-par);
+    text-transform: capitalize;
+    color: var(--c-grey-l);
+    display: block;
+    transition: all .3s ease;
+}
+
+.f_col ul li a:hover {
+    color: var(--c-light);
+    padding-left: 8px;
+}
+
+.social_links a {
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background-color: var(--c-grey);
+    margin: 0 10px 10px 0;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    transition: .5s ease;
+}
+
+.social_links a:hover{
+    background-color: var(--c-primary);
+    transform: scale(1.10);
+}
+
+.social_links a:hover i {
+    color: var(--c-dark);
+    transform: scale(1.10);
+}
+
+.social_links a i {color: var(--c-light);}
 
     /* == == == == RESPONSIVENESS == == == == */
 
@@ -1006,7 +1088,7 @@ nav { height: 70px;}
     #c_text p {
         padding: 0 3%;
         color: var(--c-dark-l);
-        font-size: var(--fs-p);
+        font-size: var(--fs-par);
         margin: 48px 0 24px 0;
         letter-spacing: 1px;
     }
@@ -1016,5 +1098,19 @@ nav { height: 70px;}
         width: 100vw;
         height: 100%;
         margin-left: 0;
+        margin-bottom: 90px;
     }
+}
+
+    /* == == == == FOOTER == == == == */
+
+@media(max-width: 750px) {
+    .f_col {
+        width: 50%;
+        margin-bottom: 30px;
+    }
+}
+
+@media(max-width: 350px) {
+    .f_col {width: 100%;}
 }
