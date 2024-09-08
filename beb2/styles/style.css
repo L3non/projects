@@ -1017,8 +1017,8 @@ footer {
     .carousel .list .item .topic{font-size: var(--fs-h1);}
 
     .carousel .list .item .des{
-        font-size: var(--fs-h4);
-        line-height: var(--fs-h2);
+        font-size: var(--fs-h5);
+        line-height: var(--fs-h3);
     }
 
     .thumbnail{bottom: 5%;}
