@@ -189,7 +189,7 @@ nav { height: 70px;}
     .nav_menu::-webkit-scrollbar-thumb {background-color: #afafaf;}
 }
 
-.nav_link {
+.nav_link, .nav_link a {
     color: var(--c-light-d);
     font-weight: 600;
     padding: 26px 22px;
@@ -697,7 +697,7 @@ nav { height: 70px;}
 .p_text p {letter-spacing: 1px;}
 
 .p_img {
-    border: 3px solid var(--c-primary);
+    border: 2px solid var(--c-primary);
     border-radius: 16px;
     width: 400px;
     height: 250px;
@@ -705,7 +705,7 @@ nav { height: 70px;}
 }
 
 .p_img:hover {
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.40);
+    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.25);
     transform: scale(1.05);
 }
 
