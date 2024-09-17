@@ -118,6 +118,67 @@ a {text-decoration: none;}
     font-size: var(--fs-h5);
 }
 
+    /* == == == == Whatsapp Fixed Button == == == == */
+
+#whatsapp a {
+    position: fixed;
+    transform: all .5s ease;
+    background-color: #25D366;
+    display: block;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    border-radius: 50px;
+    border-right: none;
+    padding-top: 7px;
+    bottom: 50px;
+    left: 50px;
+    border: 0;
+    z-index: 100;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+}
+
+#whatsapp a:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    -webkit-animation: pulse-border 1200ms ease-out infinite;
+    animation: pulse-border 1200ms ease-out infinite;
+}
+
+#whatsapp a:focus {
+    border: none;
+    outline: none;
+}
+
+#whatsapp a:hover {transform: scale(1.1);}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+#whatsapp i {
+    color: var(--c-dark);
+    font-size: var(--fs-h1);
+}
+
     /* == == == == HEADER == == == == */
 
 header {
@@ -255,10 +316,14 @@ nav { height: 70px;}
 .drop_link {
     color: var(--c-grey);
     font-size: var(--fs-par);
-    transition: color .3s;
+    transition: color .4s;
 }
 
-.drop_link:hover {color: var(--c-primary);}
+.drop_link:hover {
+    color: var(--c-primary);
+    transform: scale(1.07);
+}
+
 .show_drop .drop_arrow {transform: rotate(180deg);}
 
     /* == == == == MAIN == == == == */
@@ -925,6 +990,15 @@ footer {
 .social_links a i {color: var(--c-light);}
 
     /* == == == == RESPONSIVENESS == == == == */
+
+    /* == == == == Whatsapp Fixed Button == == == == */
+
+@media screen and (max-width: 500px) {
+    #whatsapp a {
+        bottom: 30px;
+        left: 30px;
+    }
+}
 
     /* == == == == HEADER == == == == */
 
