@@ -1084,7 +1084,7 @@ footer {
     .carousel{height: calc(100vh - 50px);}
 
     .carousel .list .item .content{
-        top: 10%;
+        top: 12%;
         padding-right: 0;
     }
 
