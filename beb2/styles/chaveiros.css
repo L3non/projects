@@ -329,37 +329,72 @@ nav { height: 70px;}
     /* == == == == Main == == == == */
 
 main {
-    padding: 90px 0;
+    padding: 70px 0;
     min-height: 100vh;
 }
 
 .filter {
-    position: fixed;
-    background-color: var(--c-grey-l);
     width: 100%;
+    margin: 60px;
     display: flex;
     justify-content: center;
     list-style: none;
-    z-index: 1;
-    
-    box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.30);
 }
 
 .filter .item {
+    letter-spacing: 1px;
     font-size: var(--fs-h5);
     font-weight: 500;
     color: var(--c-grey);
-    padding: 15px 25px;
-    margin: 0 10px;
+    padding: 0 25px;
+    margin: 0 9px;
     cursor: pointer;
+    transition: .3s;
 }
 
-.filter .active{
-    color: var(--c-primary);
+.filter .item:hover {
+    color: var(--c-dark);
+    transform: scale(1.06);
+}
+
+.filter .active {
+    font-size: var(--fs-h4);
+    color: var(--c-dark);
+    letter-spacing: 2px;
+    padding: 0 2px;
+    background: linear-gradient(to bottom, transparent 50%, var(--c-primary) 50%);
+}
+
+.filter .active:hover {transform: none;}
+
+#brasil {
+    font-size: var(--fs-big);
+    font-family: var(--ff-serif);
+    background-color: var(--c-light);
+    border: none;
+    border-radius: 0;
+    position: relative;
+    width: auto;
+    height: 100%;
+    margin: 30px 100% 60px 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    text-align: center;
+    box-shadow: none;
+    letter-spacing: 2px;
+    padding: 0 2px;
+    background: linear-gradient(to bottom, transparent 50%, var(--c-primary) 50%);
+}
+
+
+#brasil:hover {
+    transform: none;
+    box-shadow: none;
 }
 
 .itens {
-    margin: 100px 20px 30px 20px;
+    margin: 70px 60px 0px 60px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -370,12 +405,19 @@ main {
     border: 3px solid var(--c-primary);
     border-radius: 20px;
     position: relative;
-    width: 200px;
-    height: 280px;
-    margin: 12px 6px;
+    width: 180px;
+    height: 260px;
+    margin: 12px 9px;
     display: flex;
     flex-direction: column;
     padding: 6px;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.10);
+    transition: .3s;
+}
+
+.itens .item:hover {
+    transform: scale(1.12);
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
 .itens .item img {

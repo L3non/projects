@@ -115,7 +115,7 @@ $(document).ready(function() {
 		$(".itens").fadeOut()
 		setTimeout(function() {
 			$(".itens").fadeIn()
-		}, 400)
+		}, 0)
 
 		let value = $(this).attr("data-filter")
 
@@ -126,6 +126,6 @@ $(document).ready(function() {
 				$(".itens .item").not("." + value).hide("500")
 				$(".itens .item").filter("." + value).show("500")
 			}
-		}, 350)
+		}, 0)
 	})
 })
