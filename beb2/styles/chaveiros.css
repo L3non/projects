@@ -334,7 +334,7 @@ main {
 }
 
 .filter {
-    width: 100%;
+    max-width: 100vw;
     margin: 60px;
     display: flex;
     justify-content: center;
@@ -402,17 +402,17 @@ main {
 
 .itens .item {
     background-color: #ececec;
-    border: 3px solid var(--c-primary);
+    border: 2px solid var(--c-primary);
     border-radius: 20px;
     position: relative;
     width: 180px;
-    height: 260px;
+    height: 250px;
     margin: 12px 9px;
     display: flex;
     flex-direction: column;
-    padding: 6px;
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.10);
     transition: .3s;
+    align-items: center;
 }
 
 .itens .item:hover {
@@ -421,14 +421,16 @@ main {
 }
 
 .itens .item img {
-    width: 100%;
-    height: calc(100% - 27px);
+    margin: 9px;
+    width: 85%;
+    height: calc(85% - 27px);
     object-fit: contain;
 }
 
 .code {
-    padding-top: 3px;
-    text-align: center;
+    margin-top: 9px;
+    padding: 3px 9px;
+    border-top: 1px solid var(--c-grey-l);
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
