@@ -106,6 +106,20 @@ const removeStyle = () => {
 }
 addEventListener('resize', removeStyle);
 
+    /* == == == == Scroll Top Button == == == == */
+
+window.addEventListener('scroll', function() {
+    let scroll = document.querySelector('#scrollTop')
+        scroll.classList.toggle('active', this.window.scrollY > 450)
+})
+
+function backTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    })
+}
+
     /* == == == == Main == == == == */
 
 $(document).ready(function() {
