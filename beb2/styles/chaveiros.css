@@ -367,7 +367,7 @@ main {
 
 .filter .active:hover {transform: none;}
 
-#brasil {
+#title {
     font-size: var(--fs-big);
     font-family: var(--ff-serif);
     background-color: var(--c-light);
@@ -388,7 +388,7 @@ main {
 }
 
 
-#brasil:hover {
+#title:hover {
     transform: none;
     box-shadow: none;
 }
