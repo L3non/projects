@@ -72,9 +72,10 @@ a {text-decoration: none;}
 
 .logo {
     opacity: 0;
+    color: var(--c-light);
     margin-right: 10px;
     letter-spacing: 1.5px;
-    font-size: var(--fs-big);
+    font-size: var(--fs-h1);
     bottom: -20px;
     position: relative;
     display: inline-block;
@@ -90,4 +91,12 @@ a {text-decoration: none;}
     opacity: 0;
     bottom: 150px;
     transition: ease-in-out 0.5s;
+}
+
+    /* == == == == RESPONSIVENESS == == == == */
+
+    /* == == == == Splash Screen == == == == */
+
+@media screen and (max-width: 500px) {
+    .logo {font-size: var(--fs-h3);}
 }
