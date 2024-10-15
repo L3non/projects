@@ -1,5 +1,4 @@
-/* == == == == SPLASH SCREEN == == == == */
-
+/* == == == == Splash Screen == == == == */
 let intro = document.querySelector('#intro');
 let logo = document.querySelector('#logo_header');
 let logoSpan = document.querySelectorAll('.logo');
@@ -30,3 +29,29 @@ addEventListener('DOMContentLoaded', ()=>{
         },1900);
     });
 });
+
+/* == == == == Nav Menu == == == == */
+const navMenu = document.getElementById('nav_menu'),
+      navToggle = document.getElementById('nav_toggle'),
+      navClose = document.getElementById('nav_close')
+
+if (navToggle) {
+    navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('show_menu');
+        navToggle.classList.toggle('remove');
+    });
+}
+
+if (navClose) {
+    navClose.addEventListener('click', () => {
+        navMenu.classList.remove('show_menu')
+        navToggle.classList.remove('remove');
+    })
+}
+
+const navLink = document.querySelectorAll('.nav_link')
+
+function linkAction() {
+    const navMenu = document.getElementById('nav_menu')
+    
+}

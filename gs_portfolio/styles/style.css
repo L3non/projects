@@ -43,12 +43,38 @@
     padding: 0;
     font-size: var(--fs-par);
     box-sizing: border-box;
-    scroll-behavior: smooth;
 }
 
+html{scroll-behavior: smooth;}
 body {background-color: var(--c-light); height: 1000px;}
 ul {list-style: none;}
 a {text-decoration: none;}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+.section {padding: 2rem 0 4rem;}
+.section_title {font-size: var(--fs-h1);}
+
+.section_subtitle {
+    margin-bottom: var(--fs-big);
+    display: block;
+}
+
+.section_title, .section_subtitle {text-align: center;}
+
+.container {
+    max-width: 768px;
+    margin-left: var(--fs-h4);
+    margin-right: var(--fs-h4);
+}
+
+.grid {
+    display: grid;
+    gap: var(--fs-h4);
+}
 
     /* == == == == Splash Screen == == == == */
 
@@ -108,7 +134,7 @@ a {text-decoration: none;}
     bottom: 30px;
     left: 30px;
     border: 0;
-    z-index: 100;
+    z-index: 9;
     width: 50px;
     height: 50px;
     line-height: 50px;
@@ -154,10 +180,92 @@ a {text-decoration: none;}
     font-size: var(--fs-h1);
 }
 
+    /* == == == == Header == == == == */
+
+header {
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    position: fixed;
+    z-index: 100;
+}
+
+nav {
+    max-width: 986px;
+    height: var(--fs-big);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#nav_logo {letter-spacing: 1px;}
+#nav_logo:hover {color: var(--c-primary);}
+
+#nav_toggle i {
+    cursor: pointer;
+    font-size: var(--fs-h3);
+}
+
+#nav_toggle:hover i {color: var(--c-primary);}
+#nav_logo, #nav_toggle {font-weight: 500;}
+
+#nav_list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.nav_link {
+    font-size: var(--fs-small);
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.nav_link:hover i, .nav_link:hover {color: var(--c-primary);}
+.nav_icon {font-size: var(--fs-h5);}
+
+#nav_close {
+    cursor: pointer;
+    color: var(--c-primary);
+    font-size: var(--fs-h3);
+    right: 24px;
+    bottom: 12px;
+    position: absolute;
+}
+
+#nav_close:hover {color: var(--c-primary-d);}
+.show_menu{bottom: 0 !important;}
+.remove{display: none;}
+
     /* == == == == RESPONSIVENESS == == == == */
 
     /* == == == == Splash Screen == == == == */
 
 @media screen and (max-width: 500px) {
     .logo {font-size: var(--fs-h3);}
+}
+
+    /* == == == == Whatsapp Fixed Button == == == == */
+
+@media screen and (max-width: 500px) {
+    #whatsapp a {
+        bottom: 55px;
+        left: 20px;
+    }
+}
+
+    /* == == == == Header == == == == */
+
+@media screen and (max-width: 767px) {
+    #nav_menu {
+        box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
+        border-radius: 1.5rem 1.5rem 0 0;
+        padding: 2rem 1.5rem 4rem;
+        width: 100%;
+        bottom: -100%;
+        left: 0;
+        position: fixed;
+        transition: .3s;
+    }
 }
