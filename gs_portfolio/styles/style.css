@@ -329,7 +329,7 @@ body.dark_theme {
 
     /* == == == == Whatsapp Fixed Button == == == == */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 879px) {
     #whatsapp a {
         bottom: 63px;
         left: 20px;
@@ -340,7 +340,7 @@ body.dark_theme {
 
     /* == == == == Scroll Top Fixed Button == == == == */
 
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 879px) {
     #scrollTop {
         bottom: 63px;
         right: 20px;
@@ -359,7 +359,7 @@ body.dark_theme {
     #nav_list {column-gap: 0;}
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 879px) {
     #nav_menu {
         box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
         border-radius: 1.5rem 1.5rem 0 0;
@@ -372,7 +372,7 @@ body.dark_theme {
     }
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 880px) {
     .container {
         max-width: 100%;
         margin-left: 0;
