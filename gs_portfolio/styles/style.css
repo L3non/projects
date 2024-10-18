@@ -66,6 +66,8 @@ img {
     gap: var(--fs-h4);
 }
 
+section {height: 1000px;}
+
     /* == == == == Splash Screen == == == == */
 
 #intro {
@@ -108,6 +110,21 @@ img {
     bottom: 150px;
     transition: ease-in-out 0.5s;
 }
+
+    /* == == == == Scroll Bar == == == == */
+
+::-webkit-scrollbar {
+    border-radius: .5rem;
+    background-color: var(--c-grey-l);
+    width: .6rem;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: .5rem;
+    background-color: var(--c-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {background-color: var(--c-primary-d);}
 
     /* == == == == Whatsapp Fixed Button == == == == */
 
@@ -186,7 +203,7 @@ img {
     position: fixed;
     bottom: 50px;
     right: 50px;
-    z-index: 100;
+    z-index: 1;
     box-shadow: 0 1px 6px 2px rgba(0, 0, 0, 0.10),
                 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     cursor: pointer;
@@ -210,10 +227,12 @@ img {
     /* == == == == Header == == == == */
 
 header {
+    background-color: var(--c-light);
     width: 100%;
     bottom: 0;
     left: 0;
     position: fixed;
+    z-index: 998;
 }
 
 nav {
@@ -261,13 +280,44 @@ nav {
 }
 
 #nav_close:hover {color: var(--c-primary-d);}
-.show_menu {bottom: 0 !important;}
+
+.show_menu {
+    background-color: var(--c-light);
+    bottom: 0 !important;
+}
+
 .remove {display: none;}
 .active_link {color: var(--c-primary);}
 .scroll_header {box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);}
 
+#nav_btns {
+    display: flex;
+    align-items: center;
+}
 
-section {height: 660px;}
+.change_theme {
+    cursor: pointer;
+    margin-right: 1rem;
+    font-size: var(--fs-h3);
+}
+
+.change_theme:hover {color: var(--c-primary);}
+
+body.dark_theme {
+    /* Color Palette */
+    --c-primary-l: #fd7d36;
+    --c-primary:   #fc5c04;
+    --c-primary-d: #ca4a03;
+    --c-dark-l:    #fff;
+    --c-dark:      #f2f2f2;
+    --c-dark-d:    #e6e6e6;
+    --c-grey-l:    #353535;
+    --c-grey:      #0f0e0e;
+    --c-grey-d:    #2b2929;
+    --c-light-l:   #121212;
+    --c-light:     #0d0b0b;
+    --c-light-d:   #000;
+}
     
     /* == == == == RESPONSIVENESS == == == == */
 
@@ -284,6 +334,8 @@ section {height: 660px;}
         bottom: 63px;
         left: 20px;
     }
+
+    .up a {bottom: 230px !important; transition: .3s;}
 }
 
     /* == == == == Scroll Top Fixed Button == == == == */
@@ -297,6 +349,16 @@ section {height: 660px;}
 
     /* == == == == Header == == == == */
 
+@media screen and (max-width: 350px) {
+    .container {
+        margin-left: 1rem;
+        margin-right: 1rem;
+    }
+
+    #nav_menu {padding: 2rem .25rem 4rem;}
+    #nav_list {column-gap: 0;}
+}
+
 @media screen and (max-width: 767px) {
     #nav_menu {
         box-shadow: 0 -1px 4px rgba(0, 0, 0, .15);
@@ -308,6 +370,34 @@ section {height: 660px;}
         position: fixed;
         transition: .3s;
     }
+}
 
-    .up a {bottom: 230px !important; transition: .3s;}
+@media screen and (min-width: 768px) {
+    .container {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    header {
+        padding: 0 1rem;
+        top: 0;
+        bottom: initial;
+    }
+
+    nav {
+        height: 3.5rem;
+        column-gap: 1rem;
+    }
+
+    .nav_item .nav_icon,
+    #nav_close,
+    #nav_toggle {display: none;}
+
+    #nav_list {
+        display: flex;
+        column-gap: 2rem;
+    }
+
+    #nav_menu {margin-left: auto;}
+    .change_theme {margin: 0;}
 }

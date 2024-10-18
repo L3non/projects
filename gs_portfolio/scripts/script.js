@@ -107,3 +107,43 @@ function backTop() {
         behavior: 'smooth'
     })
 }
+
+/* == == == == Dark Light Theme == == == == */
+const themeBtn = document.getElementById('theme_btn');
+const darkTheme = 'dark_theme';
+const iconSun = 'fa-sun';
+const iconMoon = 'fa-moon';
+
+// Previously selected theme (if user selected)
+const selectedTheme = localStorage.getItem('selected_theme');
+const selectedIcon = localStorage.getItem('selected_icon');
+
+// Obtain the current theme and icon based on the class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
+const getCurrentIcon = () => themeBtn.classList.contains(iconMoon) ? 'fa-moon' : 'fa-sun';
+
+// If a theme was previously selected
+if (selectedTheme) {
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
+    themeBtn.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconMoon);
+    themeBtn.classList[selectedIcon === 'fa-sun' ? 'add' : 'remove'](iconSun);
+}
+
+// Toggle theme and icon manually
+themeBtn.addEventListener('click', () => {
+    // Toggle the theme
+    document.body.classList.toggle(darkTheme);
+    
+    // Toggle the icon classes
+    if (themeBtn.classList.contains(iconMoon)) {
+        themeBtn.classList.remove(iconMoon);
+        themeBtn.classList.add(iconSun);
+    } else {
+        themeBtn.classList.remove(iconSun);
+        themeBtn.classList.add(iconMoon);
+    }
+
+    // Save the current theme and icon in localStorage
+    localStorage.setItem('selected_theme', getCurrentTheme());
+    localStorage.setItem('selected_icon', getCurrentIcon());
+});
