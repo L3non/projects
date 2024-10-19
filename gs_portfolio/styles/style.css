@@ -462,6 +462,81 @@ body.dark_theme {
         border-radius: 21% 79% 50% 50% / 21% 50% 50% 79%;
     }
 }
+
+    /* == == == == Services == == == == */
+
+.services_container {
+    margin-top: 69px;
+    width: 100%;
+    height: 100%;
+    padding: 0 28px;
+}
+
+.services_container h1 {
+    color: var(--c-dark);
+    font-size: var(--fs-h1);
+    text-align: left;
+    margin-left: 1.5rem;
+    margin-bottom: 45px;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+.services_container h1::after {
+    border-radius: 20px;
+    content: '';
+    background-color: var(--c-primary);
+    width: 140px;
+    height: 4px;
+    position: absolute;
+    bottom: -9px;
+    left: 0;
+}
+
+.row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.service {
+    border: 1px solid var(--c-primary);
+    text-align: center;
+    margin: 1.5rem;
+    padding: 20px 20px;
+    border-radius: 5px;
+    font-size: var(--fs-small);
+    background: transparent;
+    transition: transform .5s, background .5s;
+}
+
+.service i {
+    font-size: var(--fs-h1);
+    margin-bottom: 8px;
+    color: var(--c-primary);
+}
+
+.service h2 {
+    font-size: var(--fs-h4);
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 2px;
+}
+
+.service p {
+    font-size: var(--fs-par);
+    letter-spacing: 1px;
+    color: var(--c-dark-d);
+}
+
+.service:hover{
+    border: 1px solid var(--c-primary-d);
+    background: var(--c-primary);
+    transform: scale(1.05);
+}
+
+.service:hover i {color: var(--c-dark-d);}
+.service:hover p, .service:hover h2 {color: var(--c-light-d);}
     
     /* == == == == RESPONSIVENESS == == == == */
 
@@ -478,13 +553,32 @@ body.dark_theme {
     #home_content {grid-template-columns: .25fr 3fr;}
 }
 
+@media screen and (max-width: 430px) {
+    .services_container {margin-top: 40px !important;}
+}
+
 @media screen and (max-width: 500px) {
     .logo {font-size: var(--fs-h3);}
+
+    .services_container {
+        margin-top: 90px;
+        width: 100%;
+        height: 100%;
+        padding: 0 1rem;
+    }
+    
+    .service {
+        margin: 1rem;
+        padding: 15px 15px;
+    }
+    
+    .service i {font-size: var(--fs-h2);}
+    .service h2 {letter-spacing: 1px;}
 }
 
     /* == == == == Mid Devices == == == == */
 
-@media screen and (max-width: 879px) {
+@media screen and (max-width: 799px) {
     #whatsapp a {
         bottom: 63px;
         left: 20px;
@@ -511,7 +605,7 @@ body.dark_theme {
 
     /* == == == == Large devices == == == == */
 
-@media screen and (min-width: 880px) {
+@media screen and (min-width: 800px) {
     .container {
         max-width: 100%;
         margin-left: 0;
