@@ -49,7 +49,12 @@
 }
 
 html{scroll-behavior: smooth;}
-body {background-color: var(--c-light);}
+
+body {
+    background-color: var(--c-light);
+    overflow-x: hidden;
+}
+
 ul {list-style: none;}
 a {text-decoration: none;}
 
@@ -934,6 +939,7 @@ footer {
 
     #contacts {flex-direction: column;}
     #c_text p {margin: 48px 1rem;}
+    
     #c_info {width: 100vw;}
 
     .f_col {
