@@ -209,13 +209,6 @@ nav {
 }
 
 .drop_content {row-gap: 26px;}
-
-.drop_title {
-    color: var(--c-dark);
-    font-weight: 600;
-    font-size: var(--fs-h5);
-}
-
 .drop_list {row-gap: 3px;}
 
 .drop_link {
