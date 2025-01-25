@@ -347,6 +347,7 @@ nav {
     top: 3.5rem;
     width: 100vw;
     height: 420px;
+    max-height: 420px;
     position: relative;
     overflow: hidden;
 }
@@ -370,14 +371,18 @@ nav {
 
 .slider .buttons{
     position: absolute;
-    top: 25%;
-    left: 5%;
-    width: 90%;
     display: flex;
     justify-content: space-between;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none;
 }
 
 .slider .buttons button{
+    cursor: pointer;
+    pointer-events: all;
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -386,6 +391,10 @@ nav {
     border: none;
     font-family: monospace;
     font-weight: bold;
+    margin: 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .slider .dots{
@@ -401,6 +410,7 @@ nav {
 }
 
 .slider .dots li{
+    cursor: pointer;
     list-style: none;
     width: 10px;
     height: 10px;
