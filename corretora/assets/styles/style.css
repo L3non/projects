@@ -300,11 +300,26 @@ nav {
 .show_drop .drop_arrow {transform: rotate(180deg);}
 
 /* == == == Search == == == */
+
+/* Show search */
+.show_search {
+    opacity: 1;
+    pointer-events: initial;
+}
+
+.show_search #search_form {transform: translateY(0);}
+
+.search {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    backdrop-filter: blur(3px);
+    -webkit-backdrop-filter: blur(3px);
+}
+
 #search_form {
+    background-color: var(--light-d);
     display: flex;
     align-items: center;
     column-gap: .5rem;
-    background-color: var(--light-d);
     box-shadow: 0 8px 32px var(--light-d);
     padding-inline: 1rem;
     border-radius: .5rem;
@@ -326,13 +341,76 @@ nav {
 
 #search_input::placeholder {color: var(--grey);}
 
-/* Show search */
-.show_search {
-    opacity: 1;
-    pointer-events: initial;
+/* == == == Hero == == == */
+
+.slider{
+    top: 3.5rem;
+    width: 100vw;
+    height: 420px;
+    position: relative;
+    overflow: hidden;
 }
 
-.show_search #search_form {transform: translateY(0);}
+.slider .list{
+    position: absolute;
+    width: 100vw;
+    height: 420px;
+    left: 0;
+    top: 0;
+    display: flex;
+    transition: 1s;
+}
+
+.slider .list img{
+    width: 100vw;
+    max-width: 100vw;
+    height: 420px;
+    object-fit: fill;
+}
+
+.slider .buttons{
+    position: absolute;
+    top: 25%;
+    left: 5%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.slider .buttons button{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #fff5;
+    color: #fff;
+    border: none;
+    font-family: monospace;
+    font-weight: bold;
+}
+
+.slider .dots{
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    color: #fff;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.slider .dots li{
+    list-style: none;
+    width: 10px;
+    height: 10px;
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.slider .dots li.active{width: 30px;}
 
 /* == == == Responsiveness == == == */
 
@@ -360,6 +438,9 @@ nav {
         margin-inline: auto;
         font-size: 2rem;
     }
+
+    /* Hero */
+    .slider{height: 700px;}
 }
 
 /* For large devices */

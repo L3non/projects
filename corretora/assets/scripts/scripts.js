@@ -1,4 +1,5 @@
 /* == == == Header == == == */
+
 const navMenu = document.getElementById('nav_menu'),
     navToggle = document.getElementById('nav_toggle'),
     navClose = document.getElementById('nav_close')
@@ -11,21 +12,6 @@ navToggle.addEventListener('click', () =>{
 // Menu hidden
 navClose.addEventListener('click', () =>{
    navMenu.classList.remove('show_menu')
-})
-
-// Search
-const search = document.getElementById('search'),
-    searchBtn = document.getElementById('search_btn'),
-    searchClose = document.getElementById('search_close')
-
-// Search show
-searchBtn.addEventListener('click', () =>{
-    search.classList.add('show_search')
-})
-
-// Search hidden
-searchClose.addEventListener('click', () =>{
-    search.classList.remove('show_search')
 })
 
 // Show Dropdown Menu
@@ -86,3 +72,64 @@ const removeStyle = () => {
     }
 }
 addEventListener('resize', removeStyle);
+
+/* == == == Search == == == */
+
+const search = document.getElementById('search'),
+    searchBtn = document.getElementById('search_btn'),
+    searchClose = document.getElementById('search_close')
+
+// Search show
+searchBtn.addEventListener('click', () =>{
+    search.classList.add('show_search')
+})
+
+// Search hidden
+searchClose.addEventListener('click', () =>{
+    search.classList.remove('show_search')
+})
+
+/* == == == Hero == == == */
+
+let slider = document.querySelector('.slider .list'),
+    items = document.querySelectorAll('.slider .list .item'),
+    next = document.getElementById('next'),
+    prev = document.getElementById('prev'),
+    dots = document.querySelectorAll('.slider .dots li'),
+    lengthItems = items.length - 1,
+    active = 0;
+
+next.onclick = function() {
+    active = active + 1 <= lengthItems ? active + 1 : 0;
+    reloadSlider();
+}
+
+prev.onclick = function() {
+    active = active - 1 >= 0 ? active - 1 : lengthItems;
+    reloadSlider();
+}
+
+let refreshInterval = setInterval(()=> {next.click()}, 3000);
+
+function reloadSlider() {
+    slider.style.left = -items[active].offsetLeft + 'px';
+
+    let last_active_dot = document.querySelector('.slider .dots li.active');
+
+    last_active_dot.classList.remove('active');
+    dots[active].classList.add('active');
+
+    clearInterval(refreshInterval);
+    refreshInterval = setInterval(()=> {next.click()}, 7000);
+}
+
+dots.forEach((li, key) => {
+    li.addEventListener('click', ()=>{
+        active = key;
+        reloadSlider();
+    })
+})
+
+window.onresize = function(event) {
+    reloadSlider();
+};
