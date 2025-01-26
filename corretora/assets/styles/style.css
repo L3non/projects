@@ -346,8 +346,8 @@ nav {
 .slider{
     top: 3.5rem;
     width: 100vw;
-    height: 420px;
-    max-height: 420px;
+    height: 40vh;
+    max-height: 50vh;
     position: relative;
     overflow: hidden;
 }
@@ -355,7 +355,7 @@ nav {
 .slider .list{
     position: absolute;
     width: 100vw;
-    height: 420px;
+    height: 40vh;
     left: 0;
     top: 0;
     display: flex;
@@ -365,7 +365,7 @@ nav {
 .slider .list img{
     width: 100vw;
     max-width: 100vw;
-    height: 420px;
+    height: 40vh;
     object-fit: fill;
 }
 
@@ -450,7 +450,16 @@ nav {
     }
 
     /* Hero */
-    .slider{height: 700px;}
+    .slider{
+        height: calc(100vh - 3.5rem);
+        max-height: calc(100vh - 3.5rem);
+    }
+    
+    .slider .list{height: calc(100vh - 3.5rem);}
+    
+    .slider .list img{
+        height: calc(100vh - 3.5rem);
+    }
 }
 
 /* For large devices */
