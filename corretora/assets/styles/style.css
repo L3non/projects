@@ -28,6 +28,12 @@
     /* Z-index */
     --z-fixed: 100;
     --z-modal: 1000;
+
+    /* Social medias menu sizes */
+    --size: 3.5rem;
+    --radius: 11rem;
+    --padding: 20px;
+    --factor: 0;
 }
 
 
@@ -95,65 +101,83 @@ img {
     color: var(--dark);
 }
 
-/* == == == Whatsapp Fixed Button == == == */
+/* == == == Contacts button == == == */
 
-#whatsapp a {
+menu {
     position: fixed;
-    transform: all .5s ease;
-    background-color: #25D366;
-    display: block;
-    text-align: center;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-    border-radius: 50px;
-    border-right: none;
-    padding-top: 7px;
-    bottom: 20px;
-    left: 20px;
-    border: 0;
-    z-index: 100;
-    width: 60px;
-    height: 60px;
-    line-height: 60px;
+    bottom: var(--padding);
+    right: var(--padding);
+    z-index: 1;
 }
 
-#whatsapp a:before {
-    content: '';
+menu > * {
+    box-shadow: 0 0 8px 0 var(--light-d);
+    background: var(--grey-l);
+    color: var(--grey-d);
+    text-decoration: none;
     position: absolute;
-    z-index: -1;
-    left: 50%;
-    top: 50%;
-    transform: translateX(-50%) translateY(-50%);
-    display: block;
-    width: 60px;
-    height: 60px;
-    background-color: hsl(142, 70%, 40%);
+    display: grid;
+    place-content: center;
+}
+
+menu > .action {
     border-radius: 50%;
-    -webkit-animation: pulse-border 1200ms ease-out infinite;
-    animation: pulse-border 1200ms ease-out infinite;
+    opacity: 0;
+    width: var(--size);
+    height: var(--size);
+    bottom: calc(0 * var(--size));
+    right: calc(0.35 * var(--size));
+    transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
-#whatsapp a:focus {
-    border: none;
-    outline: none;
+menu > .action:hover, menu > .trigger:hover{
+    box-shadow: 0 0 0 0.35rem var(--dark-l);
+    color: var(--dark-l);
 }
 
-#whatsapp a:hover {transform: scale(1.1);}
-
-@keyframes pulse-border {
-    0% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
-        opacity: 1;
-    }
-
-    100% {
-        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
-        opacity: 0;
-    }
+menu > .action:nth-child(1) {
+    --angle: -10deg;
+    transition-delay: 0.05;
+    top: 39px;
 }
 
-#whatsapp i {
-    color: var(--light-d);
-    font-size: var(--fs-h1);
+menu > .action:nth-child(2) {
+    --angle: 30deg;
+    transition-delay: 0.1s;
+    top: 18px;
+    left: -21px;
+}
+
+menu > .action:nth-child(3) {
+    --angle: 65deg;
+    transition-delay: 0.15s;
+    top: -60px;
+    left: -12px;
+}
+
+menu > .action:nth-child(4) {
+    --angle: 100deg;
+    transition-delay: 0.2s;
+    top: -165px;
+    left: -60px;
+}
+
+menu.open > .action {
+    --factor: 1;
+    opacity: 1;
+}
+
+menu > .trigger {
+    border-radius: 20px;
+    width: 156px;
+    height: 39px;
+    padding: 12px;
+    font-size: var(--fs-h5);
+    bottom: 0;
+    right: 0;
+    margin: 21px;
+    transition: box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 /* == == == Header == == == */
@@ -197,14 +221,18 @@ nav {
 @media screen and (max-width: 1023px) {
     .nav_menu {
         position: fixed;
-        top: -100%;
+        top: 0;
         left: 0;
-        background-color: var(--grey);
         box-shadow: 0 8px 16px hsla(230, 75%, 32%, .15);
         width: 100%;
         height: 100vh;
         padding-block: 4.5rem 4rem;
         transition: top .4s;
+        display: none;
+    }
+
+    .show_menu {
+        background-color: var(--grey);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -311,8 +339,8 @@ nav {
 
 .search {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-    backdrop-filter: blur(3px);
-    -webkit-backdrop-filter: blur(3px);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
 }
 
 #search_form {
@@ -426,12 +454,6 @@ nav {
 
 /* For medium devices */
 @media screen and (min-width: 576px) {
-    /* Whatsapp button */
-    #whatsapp a {
-        bottom: 30px;
-        left: 30px;
-    }
-
     /* Search */
     .search {padding-top: 10rem;}
 

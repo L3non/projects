@@ -1,3 +1,10 @@
+/* == == == Contacts button == == == */
+
+const trigger = document.querySelector('menu > .trigger');
+trigger.addEventListener('click', (e) => {
+    e.currentTarget.parentElement.classList.toggle('open');
+})
+
 /* == == == Header == == == */
 
 const navMenu = document.getElementById('nav_menu'),
