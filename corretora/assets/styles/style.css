@@ -111,7 +111,6 @@ menu {
 }
 
 menu > * {
-    box-shadow: 0 0 8px 0 var(--light-d);
     background: var(--grey-l);
     color: var(--grey-d);
     text-decoration: none;
@@ -125,42 +124,34 @@ menu > .action {
     opacity: 0;
     width: var(--size);
     height: var(--size);
-    bottom: calc(0 * var(--size));
-    right: calc(0.35 * var(--size));
+    bottom: calc(0.12 * var(--size));
+    right: calc(0.12 * var(--size));
     transform: rotate(calc(-1 * var(--angle))) translateY(calc(-1 * var(--radius) * var(--factor))) rotate(var(--angle));
-    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
+    transition: transform 0.25s ease-in-out, opacity 0.25s ease-in-out, color 0.25s ease-in-out;
 }
 
 menu > .action:hover, menu > .trigger:hover{
-    box-shadow: 0 0 0 0.35rem var(--dark-l);
     color: var(--dark-l);
 }
 
 menu > .action:nth-child(1) {
-    --angle: -10deg;
+    --angle: -5deg;
     transition-delay: 0.05;
-    top: 39px;
 }
 
 menu > .action:nth-child(2) {
-    --angle: 30deg;
+    --angle: 25deg;
     transition-delay: 0.1s;
-    top: 18px;
-    left: -21px;
 }
 
 menu > .action:nth-child(3) {
-    --angle: 65deg;
+    --angle: 60deg;
     transition-delay: 0.15s;
-    top: -60px;
-    left: -12px;
 }
 
 menu > .action:nth-child(4) {
-    --angle: 100deg;
+    --angle: 95deg;
     transition-delay: 0.2s;
-    top: -165px;
-    left: -60px;
 }
 
 menu.open > .action {
@@ -169,15 +160,43 @@ menu.open > .action {
 }
 
 menu > .trigger {
-    border-radius: 20px;
-    width: 156px;
-    height: 39px;
+    border-radius: 50%;
+    width: 105px;
+    height: 105px;
     padding: 12px;
     font-size: var(--fs-h5);
     bottom: 0;
     right: 0;
     margin: 21px;
-    transition: box-shadow 0.25s ease-in-out, color 0.25s ease-in-out;
+    text-align: center;
+}
+
+menu > .trigger:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--dark);
+    border-radius: inherit;
+    -webkit-animation: pulse-border 1200ms ease-out infinite;
+    animation: pulse-border 1200ms ease-out infinite;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
 }
 
 /* == == == Header == == == */
