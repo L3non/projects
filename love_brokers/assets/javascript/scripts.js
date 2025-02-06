@@ -1,30 +1,75 @@
-/* == == == Show menu == == == */
-const navMenu = document.querySelector('#nav_menu'),
-      navToggle = document.querySelector('#nav_toggle'),
-      navClose = document.querySelector('#nav_close')
+/* == == == Splash screen == == == */
+let intro = document.querySelector('#intro');
+let logo = document.querySelector('#logo_header');
+let logoSpan = document.querySelectorAll('.logo');
+
+addEventListener('DOMContentLoaded', ()=>{
+    setTimeout(()=>{
+
+        // Makes the logo appear the screen
+        logoSpan.forEach((span, idx)=>{
+            setTimeout(()=>{
+                span.classList.add('active');
+            }, (idx + 1) * 300);
+        });
+
+        // Makes the slogan go off the screen
+        setTimeout(()=>{
+            logoSpan.forEach((span, idx)=>{
+                setTimeout(()=>{
+                    span.classList.remove('active');
+                    span.classList.add('fade');
+                }, (idx + 1) * 250);
+            })
+        },1100);
+
+        // Makes the splash screen go off the screen
+        setTimeout(()=>{
+            intro.style.top = '-100vh';
+        },1800);
+    });
+});
+
+/* == == == Header == == == */
+const navMenu = document.getElementById('nav_menu'),
+    navToggle = document.getElementById('nav_toggle'),
+    navClose = document.getElementById('nav_close')
 
 // Menu show
-if (navToggle) {
-    navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show_menu')
-    })
-}
+navToggle.addEventListener('click', () =>{
+    navMenu.classList.add('show_menu')
+})
 
 // Menu hidden
-if (navClose) {
-    navClose.addEventListener('click', () => {
-        navMenu.classList.remove('show_menu')
-    })
+navClose.addEventListener('click', () =>{
+   navMenu.classList.remove('show_menu')
+})
+
+const shadowHeader = () => {
+    const header = document.querySelector('header');
+
+    // When the scroll is grater than 50 viewport height, add the scroll-header class to the header tag
+    this.scrollY >= 50 ? header.classList.add('shadow_header') : header.classList.remove('shadow_header');
 }
+window.addEventListener('scroll', shadowHeader);
 
-// Remove menu mobile
-const navLink = document.querySelectorAll('.nav_link')
+/* == == == Main == == == */
+// Hero
+let swiperHome = new Swiper('.home_swiper', {
+    loop: true,
+    spaceBetween: -24,
+    grabCursos: true,
+    slidesPerView: 'auto',
+    centeredSlides: 'auto',
 
-const linkAction = () => {
-    const navMenu = document.querySelector('#nav_menu')
-    // When click on each nav_link, remove the show_menu class
-    navMenu.classList.remove('show_menu')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+    autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+    },
 
-/* == == == Hero == == == */
+    breakpoints: {
+        1220: {
+            spaceBetween: -32,
+        }
+    }
+})

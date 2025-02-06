@@ -16,28 +16,47 @@
     <!-- Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="assets/styles/swiper-bundle.min.css">
+
     <!-- Styles -->
     <link rel="stylesheet" href="assets/styles/style.css">
 
 </head>
 <body>
+<!-- == == == Splash screen == == == -->
+    <div id="intro">
+        <h1 id="logo_splash">
+            <span class="logo" id="icon"><img src="assets/images/logo_icon.png" alt="Logo Love Brokers"></span>
+            <span class="logo" id="title"><img src="assets/images/logo_title.png" alt="Love Brokers"></span>
+        </h1>
+    </div>
+
 <!-- == == == Header == == == -->
     <header>
         <nav class="container">
-            <a href="#" id="nav_logo"><img src="assets/images/logo.png" alt="Love Brokers imóveis logo"></a>
+            <a href="######" id="nav_logo"><img src="assets/images/logo.png" alt="Logo Love Brokers"></a>
 
             <div id="nav_menu" class="nav_menu">
                 <ul id="nav_list">
-                    <li>
-                        <a href="#" class="nav_link">Início</a>
+                    <li class="nav_item">
+                        <a href="######" class="nav_link">Início</a>
                     </li>
 
-                    <li>
-                        <a href="#" class="nav_link">Sobre Nós</a>
+                    <li class="nav_item">
+                        <a href="######" class="nav_link">Sobre Nós</a>
                     </li>
 
-                    <li>
-                        <a href="#" class="nav_link">Contatos</a>
+                    <li class="nav_item">
+                        <a href="#####" class="nav_link">Investidores</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="######" class="nav_link">Parcerias</a>
+                    </li>
+
+                    <li class="nav_item">
+                        <a href="######" class="nav_link">Contato</a>
                     </li>
                 </ul>
 
@@ -47,81 +66,66 @@
                 </div>
             </div>
 
-            <!-- Toggle button -->
-            <div id="nav_toggle" class="nav_toggle">
-                <i class="fa-solid fa-bars"></i>
+            <div id="nav_actions">
+                <!-- Theme button -->
+                <i class="fa-regular fa-moon change_theme" id="theme_btn"></i>
+
+                <!-- Toggle button -->
+                <div id="nav_toggle" class="nav_toggle">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
             </div>
         </nav>
     </header>
 
-<!-- == == == Hero == == == -->
-    <section id="hero">
-        <div id="home_swiper">
-            <div>
-                <article class="home_article">
-                    <div class="home_data container">
-                        <h1 class="home_title">Relaxing Steep <br> Lake House</h1>
-                        <h3 class="home_subtitle">Architecture</h3>
+<!-- == == == Main == == == -->
+    <main>
+        <!-- Hero -->
+        <section id="home" class="section">
+            <div class="home_container container grid">
+                <div class="home_data">
+                    <h1 id="home_title">Browse &<br>Select E-Books</h1>
 
-                        <a href="#" class="home_btn"> See project <i class="fa-solid fa-angle-right"></i></a>
+                    <p id="home_description">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fuga culpa delectus, nulla nam ipsum distinctio labore autem itaque deleniti,
+                    </p>
+
+                    <a href="#" class="button">Explore Now</a>
+                </div>
+
+                <div id="home_images">
+                    <div class="home_swiper swiper">
+                        <div class="swiper-wrapper">
+                            <article class="home_article swiper-slide">
+                                <img src="./assets/images/home/home01.jpg" alt="Home01" class="home_img">
+                            </article>
+
+                            <article class="home_article swiper-slide">
+                                <img src="./assets/images/home/home02.jpg" alt="Home02" class="home_img">
+                            </article>
+
+                            <article class="home_article swiper-slide">
+                                <img src="./assets/images/home/home03.jpg" alt="Home03" class="home_img">
+                            </article>
+
+                            <article class="home_article swiper-slide">
+                                <img src="./assets/images/home/home04.jpg" alt="Home04" class="home_img">
+                            </article>
+                        </div>
                     </div>
-
-                    <img src="assets/images/home01.png" alt="Home01" class="home_img">
-                    <div class="home_shadow"></div>
-                </article>
-
-                <article class="home_article">
-                    <div class="home_data container">
-                        <h1 class="home_title">Relaxing Steep <br> Lake House</h1>
-                        <h3 class="home_subtitle">Architecture</h3>
-
-                        <a href="#" class="home_btn"> See project <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-
-                    <img src="assets/images/home02.png" alt="Home02" class="home_img">
-                    <div class="home_shadow"></div>
-                </article>
-
-                <article class="home_article">
-                    <div class="home_data container">
-                        <h1 class="home_title">Relaxing Steep <br> Lake House</h1>
-                        <h3 class="home_subtitle">Architecture</h3>
-
-                        <a href="#" class="home_btn"> See project <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-
-                    <img src="assets/images/home03.png" alt="Home03" class="home_img">
-                    <div class="home_shadow"></div>
-                </article>
-
-                <article class="home_article">
-                    <div class="home_data container">
-                        <h1 class="home_title">Relaxing Steep <br> Lake House</h1>
-                        <h3 class="home_subtitle">Architecture</h3>
-
-                        <a href="#" class="home_btn"> See project <i class="fa-solid fa-angle-right"></i></a>
-                    </div>
-
-                    <img src="assets/images/home04.png" alt="Home04" class="home_img">
-                    <div class="home_shadow"></div>
-                </article>
+                </div>
             </div>
-        </div>
+        </section>
+    </main>
 
-        <div id="home_content">
-            <div id="home_social">
-                <a href="#" class="home_social_link" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
-                <a href="#" class="home_social_link" target="_blank"><i class="fa-regular fa-envelope"></i></a>
-                <a href="#" class="home_social_link" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-            </div>
-        </div>
-    </section>
+
 
 
 
 
 
 <!-- == == == Scripts == == == -->
-    <script src="javascript/scripts.js"></script>
+    <script src="assets/javascript/swiper-bundle.min.js"></script>
+    <script src="assets/javascript/scripts.js"></script>
 </body>
 </html>
