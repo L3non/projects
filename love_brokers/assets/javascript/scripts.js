@@ -35,7 +35,7 @@ const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
     duration: '2500',
-    delay: '2400',
+    delay: '1800',
     // reset: true, // Animations repeat
 });
 
@@ -122,7 +122,7 @@ themeBtn.addEventListener('click', () => {
 // Hero
 let swiperHome = new Swiper('.home_swiper', {
     loop: true,
-    spaceBetween: -24,
+    spaceBetween: -15,
     grabCursos: true,
     slidesPerView: 'auto',
     centeredSlides: 'auto',
@@ -134,7 +134,7 @@ let swiperHome = new Swiper('.home_swiper', {
 
     breakpoints: {
         1220: {
-            spaceBetween: -32,
+            spaceBetween: -21,
         }
     }
 })
