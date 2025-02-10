@@ -34,13 +34,18 @@ addEventListener('DOMContentLoaded', ()=>{
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: '2500',
+    duration: '2400',
     delay: '1800',
     // reset: true, // Animations repeat
 });
 
 sr.reveal(`.home_data`);
-sr.reveal(`#home_images`, {delay: 1800})
+sr.reveal(`#home_images`, {delay: 1800});
+sr.reveal(`.tabs_container > ul`, {
+    origin: 'left',
+    distance: '300px',
+    delay: '2400',
+});
 /*
 sr.reveal(`.services_card`, {interval: 100})
 sr.reveal(`.discount_data`, {origin: 'left'})
@@ -78,46 +83,6 @@ const shadowHeader = () => {
 }
 window.addEventListener('scroll', shadowHeader);
 
-// Light and dark theme
-const themeBtn = document.getElementById('theme_btn'),
-      darkTheme = 'dark_theme',
-      iconSun = 'fa-sun',
-      iconMoon = 'fa-moon';
-
-// Previously selected theme (if user selected)
-const selectedTheme = localStorage.getItem('selected_theme'),
-      selectedIcon = localStorage.getItem('selected_icon');
-
-// Obtain the current theme and icon based on the class
-const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light',
-      getCurrentIcon = () => themeBtn.classList.contains(iconMoon) ? 'fa-moon' : 'fa-sun';
-
-// If a theme was previously selected
-if (selectedTheme) {
-    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme);
-    themeBtn.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconMoon);
-    themeBtn.classList[selectedIcon === 'fa-sun' ? 'add' : 'remove'](iconSun);
-}
-
-// Toggle theme and icon manually
-themeBtn.addEventListener('click', () => {
-    // Toggle the theme
-    document.body.classList.toggle(darkTheme);
-    
-    // Toggle the icon classes
-    if (themeBtn.classList.contains(iconMoon)) {
-        themeBtn.classList.remove(iconMoon);
-        themeBtn.classList.add(iconSun);
-    } else {
-        themeBtn.classList.remove(iconSun);
-        themeBtn.classList.add(iconMoon);
-    }
-
-    // Save the current theme and icon in localStorage
-    localStorage.setItem('selected_theme', getCurrentTheme());
-    localStorage.setItem('selected_icon', getCurrentIcon());
-});
-
 /* == == == Main == == == */
 // Hero
 let swiperHome = new Swiper('.home_swiper', {
@@ -137,4 +102,114 @@ let swiperHome = new Swiper('.home_swiper', {
             spaceBetween: -21,
         }
     }
-})
+});
+
+// Tabs
+const tabsContainer = document.querySelector('.tabs_container'),
+      tabsList = tabsContainer.querySelector('ul'),
+      tabBtns = tabsList.querySelectorAll('a'),
+      tabPanels = tabsContainer.querySelectorAll('.tabs_panels > article');
+
+tabsList.setAttribute('role', 'tablist');
+
+tabsList.querySelectorAll('li').forEach((listitem) => {
+    listitem.setAttribute('role', 'presentation');
+});
+
+tabBtns.forEach((tab, index) => {
+    tab.setAttribute('role', 'tab');
+
+    if (index === 0) {
+        tab.setAttribute('aria-selected', 'true');
+    } else {
+        tab.setAttribute('tabindex', '-1');
+        tabPanels[index].setAttribute('hidden', '');
+    }
+});
+
+tabPanels.forEach((panel) => {
+    panel.setAttribute('role', 'tabpanel');
+    panel.setAttribute('tabindex', '0');
+});
+
+tabsContainer.addEventListener('click', (e) => {
+    const clickedTab = e.target.closest('a');
+    if (!clickedTab) return;
+    e.preventDefault();
+
+    switchTab(clickedTab);
+});
+
+tabsContainer.addEventListener('keydown', (e) => {
+    switch (e.key) {
+        case 'ArrowLeft':
+            moveLeft();
+            break;
+        case 'ArrowRight':
+            moveRight();
+            break;
+        case 'Home':
+            e.preventDefault();
+            switchTab(tabBtns[0]);
+            break;
+        case 'End':
+            e.preventDefault();
+            switchTab(tabBtns[tabBtns.length - 1]);
+            break;
+    }
+});
+
+function moveLeft() {
+    const currentTab = document.activeElement;
+
+    if (!currentTab.parentElement.previousElementSibling) {
+        switchTab(tabBtns[tabBtns.length - 1]);
+    } else {
+        switchTab(currentTab.parentElement.previousElementSibling.querySelector('a'));
+    }
+}
+
+function moveRight() {
+    const currentTab = document.activeElement;
+
+    if (!currentTab.parentElement.nextElementSibling) {
+        switchTab(tabBtns[0]);
+    } else {
+        switchTab(currentTab.parentElement.nextElementSibling.querySelector('a'));
+    }
+}
+
+function switchTab(newTab) {
+    const activePanelId = newTab.getAttribute('href'),
+          activePanel = tabsContainer.querySelector(activePanelId);
+
+    tabBtns.forEach((btn) => {
+        btn.setAttribute('aria-selected', false);
+        btn.setAttribute('tabindex', '-1');
+    })
+    
+    tabPanels.forEach((panel) => {
+        panel.setAttribute('hidden', true);
+    });
+    activePanel.removeAttribute('hidden');
+    newTab.setAttribute('aria-selected', true);
+    newTab.setAttribute('tabindex', '0');
+    newTab.focus();
+}
+
+// Search
+let searchBtn = document.querySelector('.search_btn'),
+    closeBtn = document.querySelector('.close_btn'),
+    searchBox = document.querySelector('.search_box');
+
+searchBtn.onclick = function () {
+    searchBox.classList.add('active');
+    closeBtn.classList.add('active');
+    searchBtn.classList.add('active');
+}
+
+closeBtn.onclick = function () {
+    searchBox.classList.remove('active');
+    closeBtn.classList.remove('active');
+    searchBtn.classList.remove('active');
+}
