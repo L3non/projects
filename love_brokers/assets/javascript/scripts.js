@@ -39,18 +39,47 @@ const sr = ScrollReveal({
     // reset: true, // Animations repeat
 });
 
-sr.reveal(`.home_data`);
-sr.reveal(`#home_images`, {delay: 1800});
+sr.reveal(`#whatsapp a`, {
+    origin: 'bottom',
+    delay: '2400',
+    distance: '150px',
+});
+
+sr.reveal(`#nav_logo`, {
+    origin: 'left',
+    delay: '1800',
+    duration: '1800',
+});
+
+sr.reveal(`#nav_menu, #nav_actions`, {
+    origin: 'right',
+    delay: '1800',
+    duration: '1800',
+});
+
+sr.reveal(`.home_data`, {
+    origin: 'left',
+    delay: '2100',
+});
+
+
+sr.reveal(`#home_images`, {
+    origin: 'rigth',
+    delay: '2100',
+});
+
 sr.reveal(`.tabs_container > ul`, {
     origin: 'left',
-    distance: '300px',
     delay: '2400',
+    distance: '150px',
 });
-/*
-sr.reveal(`.services_card`, {interval: 100})
-sr.reveal(`.discount_data`, {origin: 'left'})
-sr.reveal(`.discount_images`, {origin: 'right'})
-*/
+
+sr.reveal(`.tabs_container li, .search`, {
+    origin: 'right',
+    distance: '150px',
+    delay: '2700',
+    interval: '270',
+});
 
 /* == == == Scroll up == == == */
 const scrollUp = () => {
