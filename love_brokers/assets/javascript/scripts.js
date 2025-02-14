@@ -45,18 +45,6 @@ sr.reveal(`#whatsapp a`, {
     distance: '150px',
 });
 
-sr.reveal(`#nav_logo`, {
-    origin: 'left',
-    delay: '1800',
-    duration: '1800',
-});
-
-sr.reveal(`#nav_menu, #nav_actions`, {
-    origin: 'right',
-    delay: '1800',
-    duration: '1800',
-});
-
 sr.reveal(`.home_data`, {
     origin: 'left',
     delay: '2100',
@@ -79,6 +67,19 @@ sr.reveal(`.tabs_container li, .search`, {
     distance: '150px',
     delay: '2700',
     interval: '270',
+});
+
+sr.reveal(`.accordion`, {
+    origin: 'left',
+    delay: '600',
+    interval: '90',
+    duration: '600',
+});
+
+sr.reveal(`.item`, {
+    delay: '900',
+    interval: '120',
+    duration: '900',
 });
 
 /* == == == Scroll up == == == */
@@ -242,3 +243,124 @@ closeBtn.onclick = function () {
     closeBtn.classList.remove('active');
     searchBtn.classList.remove('active');
 }
+
+// Select the search input
+const searchInput = document.querySelector('#search');
+
+searchInput.addEventListener('input', (event) => {
+    // Stores and formats the input value
+    const value = formatString(event.target.value);
+    // Select all items
+    const items = document.querySelectorAll('.items .item');
+    // Select the "no results" message element
+    const noResults = document.querySelector('#no_results');
+    // Indicates whether there are matching results
+    let hasResults = false;
+
+    if (value !== '') {
+        items.forEach(item => {
+            // Gets the item description element
+            const itemDescriptionElement = item.querySelector('.card_description');
+            // Checks if the element exists before trying to access the text
+            const itemDescription = itemDescriptionElement ? itemDescriptionElement.textContent : '';
+
+            if (formatString(itemDescription).includes(value)) {
+                item.style.display = 'flex';
+                hasResults = true;
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        // Display or hide the "no results" message
+        noResults.style.display = hasResults ? 'none' : 'block';
+    } else {
+        // Always display all items when input is empty
+        items.forEach(item => item.style.display = 'flex');
+        noResults.style.display = 'none';
+    }
+});
+
+// Function to format strings: removes whitespace, transforms to lowercase and removes accents
+function formatString(value) {
+    return value
+        ? value.trim()
+            .toLowerCase()
+            .normalize('NFD')
+            .replace(/[\u0300-\u036f]/g, '')
+        : ''; // Returns empty string if undefined or null
+}
+
+// Tabs panels
+const accordions = document.querySelectorAll('.accordion');
+
+accordions.forEach(accordion => {
+    const header = accordion.querySelector('.accordion_header');
+    const body = accordion.querySelector('.accordion_body');
+
+    if (header && body) {
+        header.addEventListener('click', () => {
+            body.classList.toggle('active');
+        });
+    }
+});
+
+// Card popup
+const modal = document.querySelectorAll('.modal'),
+      cardBtn = document.querySelectorAll('.card_product'),
+      modalClose = document.querySelectorAll('.modal_close'),
+      modalCard = document.querySelectorAll('.modal_card');
+
+let activeModal = (modalClick) => {
+   modal[modalClick].classList.add('active_modal');
+}
+
+// Show modal
+cardBtn.forEach((cardBtn, i) => {
+    cardBtn.addEventListener('click', () => {
+        activeModal(i);
+    });
+});
+
+// Hide modal
+modalClose.forEach((modalClose) => {
+    modalClose.addEventListener('click', () => {
+        modal.forEach((modalRemove) => {
+            modalRemove.classList.remove('active_modal');
+        });
+   });
+});
+
+// Hide modal on background click
+modal.forEach((modal) => {
+    modal.addEventListener('click', () => {
+        modal.classList.remove('active_modal');
+    });
+});
+
+// Don't hide modal on card click (by event propagation)
+modalCard.forEach((modalCard) => {
+    modalCard.addEventListener('click', (e) =>{
+        e.stopPropagation();
+    });
+});
+
+// Image carousel
+let swiper = new Swiper('.swiper_modal', {
+    loop: 'true',
+
+    pagination: {
+        el: '.swiper-pagination',
+        type: 'fraction',
+    },
+
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEL: '.swiper-button-prev',
+    },
+
+    autoplay: {
+        delay: '3000',
+        disableOnInteraction: false,
+    },
+});

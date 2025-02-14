@@ -135,59 +135,482 @@
                 </div>
 
                 <div class="search_box">
-                    <input type="text" placeholder="Search here...">
+                    <input id="search" class="input_field" type="text" placeholder="Faça sua pesquisa aqui...">
                 </div>
             </ul>
 
             <!-- Tabs containers -->
             <div class="tabs_panels flow">
+                <!-- Aruã -->
                 <article id="arua" aria-labelledby="tab_1">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Aruã</p>
+                    <!-- Até 1.4m -->
+                    <div class="accordion">
+                        <button class="accordion_header">
+                            <span>Até R$ 1.400.000,00</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+            
+                        <div class="accordion_body active">
+                            <div class="card_container items">
+                                <!-- House 1 -->
+                                <article class="item">
+                                    <!-- Card -->
+                                    <div class="card_product">
+                                        <img src="assets/images/home/home01.jpg" alt="image" class="card_img">
+
+                                        <div class="card_content">
+                                            <p class="card_description">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita sequi ex cumque fugiat ducimus, est officia nemo. Similique nisi maiores voluptatibus! Debitis, voluptates doloribus pariatur repellat qui deserunt fugit!
+                                            </p>
+
+                                            <div class="card_highlights">
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bed"></i>
+                                                    <h3>3 Dormitórios</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bath"></i>
+                                                    <h3>2 Suítes</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-person-swimming"></i>
+                                                    <h3>Lazer com piscina</h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <span class="card_price">R$ 1.000.000,00</span>                 
+                                            <button class="card_btn">Saiba mais</button>
+                                        </div>
+                                    </div>
+                   
+                                    <!-- Popup -->
+                                    <div class="modal">
+                                        <div class="modal_card">
+                                            <i class="fa-solid fa-x modal_close"></i>
+                                            <div class="modal_top">
+                                                <!-- Images carrousel -->
+                                                <div class="wrapper swiper_modal">
+                                                    <div class="wrapper_inner swiper-wrapper">
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+
+                                                <div class="modal_info">
+                                                    <div class="highlights">
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bed"></i>
+                                                            <h3>3 Dormitórios</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bath"></i>
+                                                            <h3>2 Suítes</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-person-swimming"></i>
+                                                            <h3>Lazer com piscina</h3>
+                                                        </div>
+                                                    </div>
+
+                                                    <p>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quasi repellendus facilis labore! Molestias, possimus inventore illo repellat voluptate ipsum quae quia, itaque ratione explicabo eius facilis quis excepturi quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum recusandae aut consectetur sint dolor minus, eligendi amet, omnis hic reiciendis ea ipsa in placeat quidem facere est expedita error.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <span class="modal_price">$299</span>
+
+                                            <a class="modal_btn">Fale com um corretor</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- "No results found" message -->
+                                <div id="no_results">
+                                    <p>Nenhum resultado encontrado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- De 1.4m até 1.8m -->
+                    <div class="accordion">
+                        <button class="accordion_header">
+                            <span>Até R$ 1.400.000,00</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+            
+                        <div class="accordion_body active">
+                            <div class="card_container items">
+                                <!-- House 1 -->
+                                <article class="item">
+                                    <!-- Card -->
+                                    <div class="card_product">
+                                        <img src="assets/images/home/home01.jpg" alt="image" class="card_img">
+
+                                        <div class="card_content">
+                                            <p class="card_description">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita sequi ex cumque fugiat ducimus, est officia nemo. Similique nisi maiores voluptatibus! Debitis, voluptates doloribus pariatur repellat qui deserunt fugit!
+                                            </p>
+
+                                            <div class="card_highlights">
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bed"></i>
+                                                    <h3>3 Dormitórios</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bath"></i>
+                                                    <h3>2 Suítes</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-person-swimming"></i>
+                                                    <h3>Lazer com piscina</h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <span class="card_price">R$ 1.000.000,00</span>                 
+                                            <button class="card_btn">Saiba mais</button>
+                                        </div>
+                                    </div>
+                   
+                                    <!-- Popup -->
+                                    <div class="modal">
+                                        <div class="modal_card">
+                                            <i class="fa-solid fa-x modal_close"></i>
+                                            <div class="modal_top">
+                                                <!-- Images carrousel -->
+                                                <div class="wrapper swiper_modal">
+                                                    <div class="wrapper_inner swiper-wrapper">
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+
+                                                <div class="modal_info">
+                                                    <div class="highlights">
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bed"></i>
+                                                            <h3>3 Dormitórios</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bath"></i>
+                                                            <h3>2 Suítes</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-person-swimming"></i>
+                                                            <h3>Lazer com piscina</h3>
+                                                        </div>
+                                                    </div>
+
+                                                    <p>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quasi repellendus facilis labore! Molestias, possimus inventore illo repellat voluptate ipsum quae quia, itaque ratione explicabo eius facilis quis excepturi quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum recusandae aut consectetur sint dolor minus, eligendi amet, omnis hic reiciendis ea ipsa in placeat quidem facere est expedita error.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <span class="modal_price">$299</span>
+
+                                            <a class="modal_btn">Fale com um corretor</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- "No results found" message -->
+                                <div id="no_results">
+                                    <p>Nenhum resultado encontrado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- De 1.8m até 2.5m -->
+                    <div class="accordion">
+                        <button class="accordion_header">
+                            <span>Até R$ 1.400.000,00</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+            
+                        <div class="accordion_body active">
+                            <div class="card_container items">
+                                <!-- House 1 -->
+                                <article class="item">
+                                    <!-- Card -->
+                                    <div class="card_product">
+                                        <img src="assets/images/home/home01.jpg" alt="image" class="card_img">
+
+                                        <div class="card_content">
+                                            <p class="card_description">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita sequi ex cumque fugiat ducimus, est officia nemo. Similique nisi maiores voluptatibus! Debitis, voluptates doloribus pariatur repellat qui deserunt fugit!
+                                            </p>
+
+                                            <div class="card_highlights">
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bed"></i>
+                                                    <h3>3 Dormitórios</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bath"></i>
+                                                    <h3>2 Suítes</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-person-swimming"></i>
+                                                    <h3>Lazer com piscina</h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <span class="card_price">R$ 1.000.000,00</span>                 
+                                            <button class="card_btn">Saiba mais</button>
+                                        </div>
+                                    </div>
+                   
+                                    <!-- Popup -->
+                                    <div class="modal">
+                                        <div class="modal_card">
+                                            <i class="fa-solid fa-x modal_close"></i>
+                                            <div class="modal_top">
+                                                <!-- Images carrousel -->
+                                                <div class="wrapper swiper_modal">
+                                                    <div class="wrapper_inner swiper-wrapper">
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+
+                                                <div class="modal_info">
+                                                    <div class="highlights">
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bed"></i>
+                                                            <h3>3 Dormitórios</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bath"></i>
+                                                            <h3>2 Suítes</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-person-swimming"></i>
+                                                            <h3>Lazer com piscina</h3>
+                                                        </div>
+                                                    </div>
+
+                                                    <p>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quasi repellendus facilis labore! Molestias, possimus inventore illo repellat voluptate ipsum quae quia, itaque ratione explicabo eius facilis quis excepturi quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum recusandae aut consectetur sint dolor minus, eligendi amet, omnis hic reiciendis ea ipsa in placeat quidem facere est expedita error.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <span class="modal_price">$299</span>
+
+                                            <a class="modal_btn">Fale com um corretor</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- "No results found" message -->
+                                <div id="no_results">
+                                    <p>Nenhum resultado encontrado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <!-- Acima de 2.5m -->
+                    <div class="accordion">
+                        <button class="accordion_header">
+                            <span>Até R$ 1.400.000,00</span>
+                            <i class="fa-solid fa-chevron-down arrow"></i>
+                        </button>
+            
+                        <div class="accordion_body active">
+                            <div class="card_container items">
+                                <!-- House 1 -->
+                                <article class="item">
+                                    <!-- Card -->
+                                    <div class="card_product">
+                                        <img src="assets/images/home/home01.jpg" alt="image" class="card_img">
+
+                                        <div class="card_content">
+                                            <p class="card_description">
+                                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos expedita sequi ex cumque fugiat ducimus, est officia nemo. Similique nisi maiores voluptatibus! Debitis, voluptates doloribus pariatur repellat qui deserunt fugit!
+                                            </p>
+
+                                            <div class="card_highlights">
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bed"></i>
+                                                    <h3>3 Dormitórios</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-bath"></i>
+                                                    <h3>2 Suítes</h3>
+                                                </div>
+
+                                                <div class="card_highlight">
+                                                    <i class="fa-solid fa-person-swimming"></i>
+                                                    <h3>Lazer com piscina</h3>
+                                                </div>
+                                            </div>
+                                            
+                                            <span class="card_price">R$ 1.000.000,00</span>                 
+                                            <button class="card_btn">Saiba mais</button>
+                                        </div>
+                                    </div>
+                   
+                                    <!-- Popup -->
+                                    <div class="modal">
+                                        <div class="modal_card">
+                                            <i class="fa-solid fa-x modal_close"></i>
+                                            <div class="modal_top">
+                                                <!-- Images carrousel -->
+                                                <div class="wrapper swiper_modal">
+                                                    <div class="wrapper_inner swiper-wrapper">
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                        <div class="slide swiper-slide">
+                                                            <img src="assets/images/home/home01.jpg" alt="">
+                                                        </div>
+                                                    </div>
+                                                    <div class="swiper-pagination"></div>
+                                                    <div class="swiper-button-prev"></div>
+                                                    <div class="swiper-button-next"></div>
+                                                </div>
+
+                                                <div class="modal_info">
+                                                    <div class="highlights">
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bed"></i>
+                                                            <h3>3 Dormitórios</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-bath"></i>
+                                                            <h3>2 Suítes</h3>
+                                                        </div>
+    
+                                                        <div class="highlight">
+                                                            <i class="fa-solid fa-person-swimming"></i>
+                                                            <h3>Lazer com piscina</h3>
+                                                        </div>
+                                                    </div>
+
+                                                    <p>
+                                                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsam quasi repellendus facilis labore! Molestias, possimus inventore illo repellat voluptate ipsum quae quia, itaque ratione explicabo eius facilis quis excepturi quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum illum recusandae aut consectetur sint dolor minus, eligendi amet, omnis hic reiciendis ea ipsa in placeat quidem facere est expedita error.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <span class="modal_price">$299</span>
+
+                                            <a class="modal_btn">Fale com um corretor</a>
+                                        </div>
+                                    </div>
+                                </article>
+
+                                <!-- "No results found" message -->
+                                <div id="no_results">
+                                    <p>Nenhum resultado encontrado</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </article>
 
+                <!-- Terrenos -->
                 <article id="terrenos" aria-labelledby="tab_2">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Terrenos</p>
+
                 </article>
 
+                <!-- Locações -->
                 <article id="locacoes" aria-labelledby="tab_3">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Locações</p>
+                    
                 </article>
 
+                <!-- Apartamentos -->
                 <article id="apartamentos" aria-labelledby="tab_4">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Apartamentos</p>
+                    
                 </article>
 
+                <!-- Bairros -->
                 <article id="bairros" aria-labelledby="tab_5">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Bairros</p>
+                    
                 </article>
 
+                <!-- Comerciais -->
                 <article id="comerciais" aria-labelledby="tab_6">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Comerciais</p>
+                    
                 </article>
 
+                <!-- Outros -->
                 <article id="outros" aria-labelledby="tab_7">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Repudiandae blanditiis fuga omnis debitis officia velit inventore sapiente totam impedit, corporis esse obcaecati cumque recusandae laboriosam consequuntur praesentium incidunt hic nobis. Outros</p>
+                    
                 </article>
             </div>
-
-
         </section>
-
-        <div style="height: 10000px;"></div>
     </main>
-
-
-
-
-
-
 
 <!-- == == == Scripts == == == -->
     <!-- Image swiper -->
     <script src="assets/javascript/swiper-bundle.min.js"></script>
 
     <!-- Scroll reveal -->
-     <script src="assets/javascript/scrollreveal.min.js"></script>
+    <script src="assets/javascript/scrollreveal.min.js"></script>
 
     <!-- Global -->
     <script src="assets/javascript/scripts.js"></script>
