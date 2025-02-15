@@ -34,8 +34,8 @@ addEventListener('DOMContentLoaded', ()=>{
 const sr = ScrollReveal({
     origin: 'top',
     distance: '60px',
-    duration: '2400',
-    delay: '1800',
+    duration: '2100',
+    delay: '1500',
     // reset: true, // Animations repeat
 });
 
@@ -58,28 +58,41 @@ sr.reveal(`#home_images`, {
 
 sr.reveal(`.tabs_container > ul`, {
     origin: 'left',
-    delay: '2400',
-    distance: '150px',
+    delay: '2100',
+    distance: '120px',
 });
 
 sr.reveal(`.tabs_container li, .search`, {
     origin: 'right',
-    distance: '150px',
-    delay: '2700',
-    interval: '270',
+    distance: '120px',
+    delay: '2100',
+    interval: '210',
 });
 
 sr.reveal(`.accordion`, {
     origin: 'left',
-    delay: '600',
+    delay: '300',
     interval: '90',
     duration: '600',
 });
 
 sr.reveal(`.item`, {
-    delay: '900',
-    interval: '120',
+    delay: '600',
+    interval: '90',
     duration: '900',
+});
+
+sr.reveal(`.footer_col h4`, {
+    delay: '150',
+    interval: '150',
+    duration: '720',
+});
+
+sr.reveal(`.footer_col li, .social_links a`, {
+    origin: 'left',
+    delay: '90',
+    interval: '90',
+    duration: '150',
 });
 
 /* == == == Scroll up == == == */

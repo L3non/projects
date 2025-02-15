@@ -808,6 +808,79 @@ nav {
 
 .active_modal .modal_card {transform: rotateX(0);}
 
+/* == == == Footer == == == */
+footer {
+    background-color: var(--dark);
+    padding: 70px 0;
+}
+
+.footer_container {
+    max-width: 1170px;
+    margin: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.footer_col {
+    padding: 0 15px;
+    width: 100%;
+}
+
+.footer_col h4 {
+    color: var(--light);
+    text-transform: capitalize;
+    margin-bottom: 36px;
+    font-size: var(--fs-h5);
+    font-weight: 500;
+    position: relative;
+}
+
+.footer_col h4::before {
+    content: '';
+    background-color: var(--primary-l);
+    width: 51px;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    bottom: -9px;
+}
+
+.footer_col ul li:not(:last-child) {margin-bottom: 10px;}
+
+.footer_col ul li a {
+    color: var(--light-d);
+    text-transform: capitalize;
+    font-weight: 300;
+    display: block;
+    transition: all .3s ease;
+}
+
+.footer_col ul li a:hover {
+    color: var(--light);
+    padding-left: 9px;
+}
+
+.footer_col .social_links a {
+    border-radius: 50%;
+    background-color: var(--grey);
+    color: var(--light);
+    margin: 0 9px 9px 0;
+    width: 39px;
+    height: 39px;
+    line-height: 39px;
+    display: inline-block;
+    text-align: center;
+    transition: all .5s ease;
+}
+
+.footer_col .social_links a:hover {
+    background-color: var(--light);
+    color: var(--dark-l);
+}
+
 /* == == == Media queries == == == */
 /* For medium devices */
 @media screen and (min-width: 576px) {
@@ -817,8 +890,8 @@ nav {
     }
 
     #home_title {font-size: var(--fs-h1);}
-
     .search {left: 45%;}
+    .footer_col {width: 25%;}
 }
 
 @media screen and (min-width: 768px) {
@@ -827,6 +900,11 @@ nav {
     .home_data {
         width: 420px;
         justify-self: center;
+    }
+
+    .footer-col{
+        width: 50%;
+        margin-bottom: 30px;
     }
 }
 
@@ -947,11 +1025,5 @@ nav {
 @media screen and (min-width: 1290px) {    
     .tabs_container ul {width: 80%;}
     .tabs_container li  a{padding: 12px 18px;}    
-    .search_btn {left: 30px;}
-
-    .tabs_panels {
-        margin-top: 30px;
-        width: 100%;
-    }
-    
+    .search_btn {left: 30px;}    
 }
