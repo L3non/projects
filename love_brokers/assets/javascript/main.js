@@ -22,13 +22,6 @@ sr.reveal(`.tabs_container li, .search`, {
     interval: '210',
 });
 
-sr.reveal(`.accordion`, {
-    origin: 'left',
-    delay: '300',
-    interval: '90',
-    duration: '600',
-});
-
 sr.reveal(`.item`, {
     delay: '600',
     interval: '90',
@@ -169,47 +162,48 @@ closeBtn.onclick = function () {
 const searchInput = document.querySelector('#search');
 
 searchInput.addEventListener('input', (event) => {
-    // Stores and formats the input value
     const value = formatString(event.target.value);
-    // Select all items
-    const items = document.querySelectorAll('.items .item');
-    // Select the "no results" message element
-    const noResults = document.querySelector('#no_results');
-    // Indicates whether there are matching results
-    let hasResults = false;
+    // Select all accordions
+    const accordions = document.querySelectorAll('.accordion');
 
-    if (value !== '') {
-        items.forEach(item => {
-            // Gets the item description element
-            const itemDescriptionElement = item.querySelector('.card_description');
-            // Checks if the element exists before trying to access the text
-            const itemDescription = itemDescriptionElement ? itemDescriptionElement.textContent : '';
+    accordions.forEach(accordion => {
+        // Select items within the current accordion
+        const items = accordion.querySelectorAll('.items .item');
+        // Select the "no results" message for the current accordion
+        const noResults = accordion.querySelector('.no_results');
+        let hasResults = false;
 
-            if (formatString(itemDescription).includes(value)) {
-                item.style.display = 'flex';
-                hasResults = true;
-            } else {
-                item.style.display = 'none';
-            }
-        });
+        if (value !== '') {
+            items.forEach(item => {
+                const itemDescriptionElement = item.querySelector('.card_description');
+                const itemDescription = itemDescriptionElement ? itemDescriptionElement.textContent : '';
 
-        // Display or hide the "no results" message
-        noResults.style.display = hasResults ? 'none' : 'block';
-    } else {
-        // Always display all items when input is empty
-        items.forEach(item => item.style.display = 'flex');
-        noResults.style.display = 'none';
-    }
+                if (formatString(itemDescription).includes(value)) {
+                    item.style.display = 'flex';
+                    hasResults = true;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+
+            // Show or hide the "no results" message for this accordion
+            noResults.style.display = hasResults ? 'none' : 'block';
+        } else {
+            // Show all items when input is empty
+            items.forEach(item => item.style.display = 'flex');
+            noResults.style.display = 'none';
+        }
+    });
 });
 
-// Function to format strings: removes whitespace, transforms to lowercase and removes accents
+// Function to format strings: trims spaces, converts to lowercase, and removes accents
 function formatString(value) {
     return value
         ? value.trim()
             .toLowerCase()
             .normalize('NFD')
-            .replace(/[\u0300-\u036f]/g, '')
-        : ''; // Returns empty string if undefined or null
+            .replace(/[\u0300-\u036f]/g, '') // Removes accent marks
+        : ''; // Returns an empty string if undefined or null
 }
 
 // Tabs panels
