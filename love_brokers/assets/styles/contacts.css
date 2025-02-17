@@ -1,0 +1,91 @@
+main {
+    overflow: hidden;
+    margin: 99px auto 60px auto;
+    width: 90%;
+}
+
+#top {
+    margin-bottom: 60px;
+    display: flex;
+    flex-direction: column;
+}
+
+#text h1 {
+    margin-bottom: 30px;
+    letter-spacing: 1px;
+    font-size: var(--fs-big);
+}
+
+#cards {
+    margin-top: 21px;
+    display: flex;
+    flex-direction: column;
+    gap: 21px;
+}
+
+#top_cards,
+#bottom_cards {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 21px;
+}
+
+.card h2 {
+    color: var(--grey);
+    font-size: var(--fs-par);
+    font-weight: var(--fw-regular);
+}
+
+.card a {
+    color: var(--dark);
+    font-size: var(--fs-h5);
+    font-weight: var(--fw-semi-bold);
+    transition: .3s;
+}
+
+.card a:hover { color: var(--primary);}
+
+#wallpaper img {
+    object-fit: cover;
+    width: 100%;
+    height: 210px;
+}
+
+/* == == == Media queries == == == */
+/* For medium devices */
+@media screen and (min-width: 768px) {
+    #wallpaper img {height: 300px;}
+}
+
+/* For large devices */
+@media screen and (min-width: 1023px) {
+    main {margin: 120px auto 90px auto;}
+
+    #top {
+        margin-bottom: 90px;
+        flex-direction: row;
+    }
+    
+    #text,
+    #cards {width: 50%;}
+    #text {padding-right: 21px;}
+    #text h1 {margin-bottom: 39px;}
+    
+    #cards {
+        margin-top: 0;
+        padding: 0 39px;
+        align-items: center;
+        justify-content: space-between;
+        gap: 21px;
+    }
+    
+    #top_cards,
+    #bottom_cards {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #wallpaper img {height: 450px;}
+}
