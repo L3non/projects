@@ -11,14 +11,13 @@ sr.reveal(`#home_images`, {
 
 sr.reveal(`.tabs_container > ul`, {
     origin: 'left',
-    delay: '2100',
-    distance: '120px',
+    delay: '1500',
 });
 
 sr.reveal(`.tabs_container li, .search`, {
     origin: 'right',
     distance: '120px',
-    delay: '2100',
+    delay: '1800',
     interval: '210',
 });
 

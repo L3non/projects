@@ -222,9 +222,9 @@
     box-shadow: 0 1px 6px var(--sh-lighter);
     border-radius: 6px;
     background-color: var(--light-l);
-    margin: 15px;
-    width: 390px;
-    height: 522px;
+    margin: 15px 0;
+    width: 100%;
+    height: 570px;
     display: flex;
     flex-direction: column;
     transition: transform .6s;
@@ -244,6 +244,7 @@
 }
 
 .card_content {
+    flex-grow: 1;
     padding: 12px;
     display: flex;
     flex-direction: column;
@@ -325,6 +326,12 @@
     }
 
     .no_results {padding: 15px;}
+
+    .card_product {
+        margin: 15px;
+        width: 390px;
+        height: 522px;
+    }
 }
 
 @media screen and (min-width: 1023px) {
