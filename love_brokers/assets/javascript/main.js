@@ -220,62 +220,35 @@ accordions.forEach(accordion => {
     }
 });
 
-// Card popup
-const modal = document.querySelectorAll('.modal'),
-      cardBtn = document.querySelectorAll('.card_product'),
-      modalClose = document.querySelectorAll('.modal_close'),
-      modalCard = document.querySelectorAll('.modal_card');
+// Function to check if an accordion has any items and show/hide the "no results" message
+function checkNoResults() {
+    accordions.forEach(accordion => {
+        const itemsContainer = accordion.querySelector('.items'),
+              items = itemsContainer.querySelectorAll('.item'),
+              noResults = accordion.querySelector('.no_results');
 
-let activeModal = (modalClick) => {
-   modal[modalClick].classList.add('active_modal');
+        // Show "no results" message if there are no .item elements inside .items
+        if (items.length === 0) {
+            noResults.style.display = 'block';
+        } else {
+            noResults.style.display = 'none';
+        }
+    });
 }
 
-// Show modal
-cardBtn.forEach((cardBtn, i) => {
-    cardBtn.addEventListener('click', () => {
-        activeModal(i);
-    });
-});
+// Run check initially in case the page starts without any items
+checkNoResults();
 
-// Hide modal
-modalClose.forEach((modalClose) => {
-    modalClose.addEventListener('click', () => {
-        modal.forEach((modalRemove) => {
-            modalRemove.classList.remove('active_modal');
+// MutationObserver to monitor changes in the .items container
+accordions.forEach(accordion => {
+    const itemsContainer = accordion.querySelector('.items');
+
+    if (itemsContainer) {
+        const observer = new MutationObserver(() => {
+            checkNoResults();
         });
-   });
-});
 
-// Hide modal on background click
-modal.forEach((modal) => {
-    modal.addEventListener('click', () => {
-        modal.classList.remove('active_modal');
-    });
-});
-
-// Don't hide modal on card click (by event propagation)
-modalCard.forEach((modalCard) => {
-    modalCard.addEventListener('click', (e) =>{
-        e.stopPropagation();
-    });
-});
-
-// Image carousel
-let swiper = new Swiper('.swiper_modal', {
-    loop: 'true',
-
-    pagination: {
-        el: '.swiper-pagination',
-        type: 'fraction',
-    },
-
-    navigation: {
-        nextEl: '.swiper-button-next',
-        prevEL: '.swiper-button-prev',
-    },
-
-    autoplay: {
-        delay: '3000',
-        disableOnInteraction: false,
-    },
+        // Observe changes in the child elements (items added or removed)
+        observer.observe(itemsContainer, { childList: true });
+    }
 });
